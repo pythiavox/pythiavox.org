@@ -1,4 +1,75 @@
-pbcopy < "/Users/rhodaserafim/Claude/Projects/Website/index.html"    .logo-name {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PythiaVox</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0f0f0f;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #888888;
+      --accent: #c8c8c8;
+      --accent-light: #1a1a1a;
+      --accent-dark: #ffffff;
+      --gold: #d0d0d0;
+      --nav-h: 64px;
+      --max-w: 1100px;
+      --radius: 8px;
+      --font: 'Georgia', 'Times New Roman', serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .header-inner {
+      display: contents;
+    }
+
+    .header-nav-inner {
+      display: contents;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo-name {
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 0.06em;
@@ -297,7 +368,6 @@ pbcopy < "/Users/rhodaserafim/Claude/Projects/Website/index.html"    .logo-name 
     }
 
     /* ── CALENDAR ── */
-      <script type="text/javascript" src="https://form.jotform.com/jsform/261796301232049"></script>
     .calendar-layout {
       display: grid;
       grid-template-columns: 1fr 320px;
@@ -967,39 +1037,74 @@ pbcopy < "/Users/rhodaserafim/Claude/Projects/Website/index.html"    .logo-name 
       For evening or night appointments, email <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent)">rhoda@pythiavox.org</a></p>
     </div>
     <div class="calendar-layout">
-      <div class="cal-widget">
+      <!-- Decorative calendar – illustration only, not interactive -->
+      <div class="cal-widget" style="pointer-events:none;user-select:none;">
         <div class="cal-nav">
-          <button onclick="calPrev()">‹</button>
-          <span class="cal-month-label" id="cal-label"></span>
-          <button onclick="calNext()">›</button>
+          <button style="opacity:0.3;">‹</button>
+          <span class="cal-month-label">July 2026</span>
+          <button style="opacity:0.3;">›</button>
         </div>
-        <div class="cal-grid" id="cal-grid"></div>
+        <div class="cal-grid">
+          <!-- Day headers -->
+          <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+          <!-- Week 1: Jul starts Wednesday -->
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">1</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">2</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">3</div>
+          <div class="cal-day unavailable">4</div>
+          <!-- Week 2 -->
+          <div class="cal-day unavailable">5</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">6</div>
+          <div class="cal-day unavailable">7</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">8</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">9</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">10</div>
+          <div class="cal-day unavailable">11</div>
+          <!-- Week 3 -->
+          <div class="cal-day unavailable">12</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">13</div>
+          <div class="cal-day unavailable">14</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">15</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">16</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">17</div>
+          <div class="cal-day unavailable">18</div>
+          <!-- Week 4 -->
+          <div class="cal-day unavailable">19</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">20</div>
+          <div class="cal-day unavailable">21</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">22</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">23</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">24</div>
+          <div class="cal-day unavailable">25</div>
+          <!-- Week 5 -->
+          <div class="cal-day unavailable">26</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">27</div>
+          <div class="cal-day unavailable">28</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">29</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">30</div>
+          <div class="cal-day" style="background:var(--accent-light);color:var(--accent-dark);border-radius:50%;">31</div>
+          <div class="cal-day empty"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:14px;font-family:var(--sans);font-size:0.78rem;color:var(--muted);">
+          <span style="display:inline-block;width:12px;height:12px;background:var(--accent-light);border-radius:3px;"></span> Available days
+          <span style="display:inline-block;width:12px;height:12px;background:var(--surface);border-radius:3px;margin-left:8px;opacity:0.4;"></span> Unavailable
+        </div>
       </div>
+
+      <!-- Booking panel -->
       <div class="booking-panel">
-        <h3 id="booking-date-label">Select a date to book</h3>
-        <div class="time-slots" id="time-slots"></div>
-        <div class="book-form" id="book-form" style="display:none">
-          <div id="bu-note" style="display:none;background:#0a1628;border:1px solid #3a5a9a;color:#89b4e8;border-radius:4px;padding:10px 12px;font-family:var(--sans);font-size:0.8rem;margin-bottom:4px;">
-            🎓 This time slot is reserved for <strong>Boston University students</strong>. A valid <strong>@bu.edu</strong> email is required to book.
-          </div>
-          <label>Full Name</label>
-          <input type="text" id="book-name" placeholder="Your name" />
-          <label>Email</label>
-          <input type="text" id="book-email" placeholder="your@email.com" />
-          <div id="bu-error" style="display:none;color:#e87878;font-family:var(--sans);font-size:0.78rem;margin-top:4px;">⚠ This slot requires a @bu.edu email address.</div>
-          <label>Session Type</label>
-          <select id="book-type">
-            <option>Strategy Consultation</option>
-            <option>Program Discovery</option>
-            <option>Venture Review</option>
-            <option>Coaching Session</option>
-          </select>
-          <label>Notes</label>
-          <textarea id="book-notes" placeholder="Anything we should know beforehand…"></textarea>
-          <button class="btn" onclick="submitBooking()">Request Appointment</button>
-          <div class="confirm-msg" id="book-confirm">
-            ✓ Your request has been submitted. We will be in touch within 24 hours.
-          </div>
+        <h3>Ready to book a session?</h3>
+        <p style="color:var(--muted);font-family:var(--sans);font-size:0.9rem;margin:8px 0 24px;">Highlighted days show typical availability. Click below to see real-time openings and confirm your appointment.</p>
+        <a href="https://form.jotform.com/261796301232049" target="_blank" class="btn" style="display:inline-block;text-decoration:none;text-align:center;">Book an Appointment →</a>
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border);font-family:var(--sans);font-size:0.82rem;color:var(--muted);">
+          <strong style="color:var(--accent);">Typical availability</strong><br/>
+          Mon 1–4 PM &nbsp;·&nbsp; Wed 11 AM–4 PM<br/>
+          Thu 10 AM–12 PM &nbsp;·&nbsp; Fri 10 AM–12 PM<br/><br/>
+          For evening appointments, email<br/>
+          <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">rhoda@pythiavox.org</a>
         </div>
       </div>
     </div>

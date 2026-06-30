@@ -945,7 +945,6 @@
       <button onclick="showTab('calendar')" data-tab="calendar">Book</button>
       <button onclick="showTab('events')" data-tab="events">Events</button>
       <button onclick="showTab('programs')" data-tab="programs">Programs</button>
-      <button onclick="showTab('questionnaires')" data-tab="questionnaires">Questionnaires</button>
       <button onclick="showTab('practice')" data-tab="practice">Practice</button>
       <button onclick="showTab('podcast')" data-tab="podcast">Podcast</button>
       <button onclick="showTab('progress')" data-tab="progress">Progress</button>
@@ -1134,14 +1133,6 @@
   </section>
 
   <!-- ═══════════════════════════════ QUESTIONNAIRES ════════════════════ -->
-  <section id="tab-questionnaires" class="tab-panel">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;text-align:center;gap:16px;">
-      <div style="font-size:2.5rem;">🚧</div>
-      <h2 style="color:var(--accent-dark);font-size:1.6rem;">Under Construction</h2>
-      <p style="color:var(--muted);max-width:420px;">This section is being built. Check back soon!</p>
-    </div>
-  </section>
-
   <!-- ═══════════════════════════════ PRACTICE ══════════════════════════ -->
   <section id="tab-practice" class="tab-panel">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;text-align:center;gap:16px;">
@@ -1249,7 +1240,7 @@
 
 <script>
   // ── TAB SWITCHING ──
-  const VALID_TABS = ['home','calendar','events','programs','questionnaires','practice','podcast','progress','glossary'];
+  const VALID_TABS = ['home','calendar','events','programs','practice','podcast','progress','glossary'];
 
   function showTab(id, skipHash) {
     if (!VALID_TABS.includes(id)) id = 'home';

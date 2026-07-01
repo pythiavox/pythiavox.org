@@ -1294,9 +1294,13 @@
         <p style="margin:0;"><strong style="color:var(--accent-dark);">In words:</strong> A clear problem combined with an effective solution creates an advantage, which drives conversion, ultimately resulting in ROI — the essence of a strong value proposition.</p>
       </div>
 
+      <!-- Template 1: Forbes -->
       <div class="practice-card">
-        <h3>Template</h3>
-        <p>Use the fill-in below to build your own value proposition. Your problem and solution must be logically true — you can test them by creating logical premises.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <h3 style="margin:0;">Template 1 — Start Here</h3>
+          <span style="font-family:var(--sans);font-size:0.75rem;color:var(--muted);background:var(--accent-light);padding:4px 10px;border-radius:12px;">via Forbes</span>
+        </div>
+        <p>The Forbes template is the clearest starting point for any value proposition. It forces you to name your customer, their need, and your advantage in a single sentence.</p>
         <div class="formula-box" style="font-family:var(--sans);font-size:0.9rem;">
           FOR [description of customer] WHO [statement of need], WE DELIVER [unique advantage]
         </div>
@@ -1315,6 +1319,36 @@
 
         <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
           <a href="Value Proposition Explained.pdf" download class="btn" style="text-decoration:none;">Download Value Proposition Guide ↓</a>
+        </div>
+      </div>
+
+      <!-- Template 2: Formulaic (locked until Template 1 complete) -->
+      <div class="practice-card" id="vp-advanced-card" style="opacity:0.4;pointer-events:none;position:relative;">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;gap:10px;">
+          <div style="font-size:2rem;">🔒</div>
+          <div style="font-family:var(--sans);font-size:0.85rem;color:var(--muted);text-align:center;max-width:280px;">Complete Template 1 above to unlock the Advanced Formulaic Template.</div>
+        </div>
+        <div style="filter:blur(2px);">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+            <h3 style="margin:0;">Template 2 — Advanced</h3>
+            <span style="font-family:var(--sans);font-size:0.75rem;color:var(--muted);background:var(--accent-light);padding:4px 10px;border-radius:12px;">Formulaic</span>
+          </div>
+          <p>This template applies the full VP formula: <strong>VP = f(P, S, A, ROI)</strong>. It requires you to articulate not just your customer and advantage, but the logical chain from problem to solution to advantage to ROI. Only attempt this once Template 1 is solid.</p>
+          <div class="formula-box">VP = Conversion → [ (P × S) → A ] → ROI</div>
+
+          <span class="practice-label">Problem (P) — State it precisely</span>
+          <input class="practice-input" id="vp-p" placeholder="e.g. Early-stage founders cannot identify which risks will kill their venture first." oninput="buildVPFormula()" />
+
+          <span class="practice-label">Solution (S) — Derivative of the problem</span>
+          <input class="practice-input" id="vp-s" placeholder="e.g. Structured de-risking programs that address the root cause of startup failure." oninput="buildVPFormula()" />
+
+          <span class="practice-label">Advantage (A) — What P × S yields</span>
+          <input class="practice-input" id="vp-a" placeholder="e.g. Founders build resilience and decision-making skills that outlast any single venture." oninput="buildVPFormula()" />
+
+          <span class="practice-label">ROI — The conversion this creates</span>
+          <input class="practice-input" id="vp-roi" placeholder="e.g. Higher venture survival rates and measurable growth within 90 days." oninput="buildVPFormula()" />
+
+          <div class="vp-result" id="vp-result-formula" style="font-size:0.88rem;line-height:2;"></div>
         </div>
       </div>
     </div>
@@ -1857,8 +1891,41 @@
     const result = document.getElementById('vp-result');
     if (customer || need || advantage) {
       result.style.display = 'block';
-      result.innerHTML = '<strong style="color:var(--gold);font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;">Your Value Proposition</strong><br/><br/>' +
+      result.innerHTML = '<strong style="color:var(--gold);font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;">Your Value Proposition (Forbes)</strong><br/><br/>' +
         'For <strong>' + (customer || '___') + '</strong> who <strong>' + (need || '___') + '</strong>, we deliver <strong>' + (advantage || '___') + '</strong>.';
+    } else {
+      result.style.display = 'none';
+    }
+    // Unlock advanced card when all 3 fields are complete
+    const advCard = document.getElementById('vp-advanced-card');
+    if (customer && need && advantage) {
+      advCard.style.opacity = '1';
+      advCard.style.pointerEvents = 'auto';
+      advCard.querySelector('div[style*="position:absolute"]').style.display = 'none';
+      advCard.querySelector('div[style*="filter:blur"]').style.filter = 'none';
+    } else {
+      advCard.style.opacity = '0.4';
+      advCard.style.pointerEvents = 'none';
+      advCard.querySelector('div[style*="position:absolute"]').style.display = 'flex';
+      advCard.querySelector('div[style*="filter"]').style.filter = 'blur(2px)';
+    }
+  }
+
+  function buildVPFormula() {
+    const p = document.getElementById('vp-p').value.trim();
+    const s = document.getElementById('vp-s').value.trim();
+    const a = document.getElementById('vp-a').value.trim();
+    const roi = document.getElementById('vp-roi').value.trim();
+    const result = document.getElementById('vp-result-formula');
+    if (p || s || a || roi) {
+      result.style.display = 'block';
+      result.innerHTML =
+        '<strong style="color:var(--gold);font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;">Your Formulaic VP</strong><br/><br/>' +
+        '<strong>P:</strong> ' + (p || '___') + '<br/>' +
+        '<strong>S:</strong> ' + (s || '___') + '<br/>' +
+        '<strong>P × S → A:</strong> ' + (a || '___') + '<br/>' +
+        '<strong>A → Conversion → ROI:</strong> ' + (roi || '___') + '<br/><br/>' +
+        '<em style="color:var(--muted);font-size:0.82rem;">VP = f(P, S, A, ROI) ✓</em>';
     } else {
       result.style.display = 'none';
     }

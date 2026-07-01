@@ -1356,9 +1356,51 @@
     <!-- ── BUILD YOUR PITCH ── -->
     <div id="practice-pitch-build" class="practice-section">
       <div class="practice-card">
-        <h3>What Makes a Great Pitch?</h3>
-        <p>A pitch is not a presentation — it's a logical argument. Every sentence must build the case for why your venture should exist, why it will win, and why you are the team to do it. The goal is not to impress; it's to make the investor say "I need to know more."</p>
-        <p style="margin:0;">The structure below is a proven 3-minute pitch framework. Each block has a strict purpose. Stick to it until you can break it intentionally.</p>
+        <h3>What is a Pitch?</h3>
+        <p>A pitch is a mini speech that convinces an audience to action through a mathematically sound value proposition in 60s.</p>
+
+        <h3 style="margin-top:24px;">Pitch Mechanics</h3>
+        <p><strong style="color:var(--accent-dark);">How to Build a Pitch:</strong></p>
+        <p>In order to build a pitch, first, you'll need to build a value proposition. Once you have a value proposition, you'll use it to write your pitch script.</p>
+        <p style="margin-bottom:20px;">A pitch has 3 major parts:</p>
+
+        <div class="rule-item">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Why?</strong> — Story-telling/context and problem statement</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>How?</strong> — Solution Description</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>What?</strong> — Remind the audience who you are and what you offer</div>
+        </div>
+      </div>
+
+      <!-- Pitch Template -->
+      <div class="practice-card">
+        <h3>Pitch Template</h3>
+        <p>Use the fields below to draft your 60-second pitch. Each part maps directly to one of the 3 pitch components. Complete them in order.</p>
+
+        <div class="formula-box" style="font-family:var(--sans);font-size:0.9rem;line-height:2;">
+          WHY [your story &amp; problem] → HOW [your solution] → WHAT [who you are &amp; what you offer]
+        </div>
+
+        <span class="practice-label">1 — Why? (Your story, context &amp; problem statement)</span>
+        <textarea class="practice-input" id="pitch-why" rows="3" placeholder="e.g. Every year, thousands of startups raise funding but plateau within 18 months — not because the idea is wrong, but because founders have no tools to test and rebuild their business concept." oninput="buildPitch()" style="resize:vertical;min-height:80px;"></textarea>
+
+        <span class="practice-label">2 — How? (Your solution description)</span>
+        <textarea class="practice-input" id="pitch-how" rows="3" placeholder="e.g. We use Popper's Corroboration Method to help founders troubleshoot their business concept, building the resilience and insight needed to pivot or rebuild with confidence." oninput="buildPitch()" style="resize:vertical;min-height:80px;"></textarea>
+
+        <span class="practice-label">3 — What? (Who you are &amp; what you offer)</span>
+        <textarea class="practice-input" id="pitch-what" rows="3" placeholder="e.g. We are PythiaVox — an innovation agency that de-risks startups through structured trial and error programs, because ventures must thrive." oninput="buildPitch()" style="resize:vertical;min-height:80px;"></textarea>
+
+        <div class="vp-result" id="pitch-result" style="font-size:0.9rem;line-height:1.9;white-space:pre-wrap;"></div>
+
+        <div style="margin-top:24px;padding:14px 18px;background:var(--accent-light);border-radius:8px;font-family:var(--sans);font-size:0.85rem;color:var(--muted);">
+          ⏱ <strong style="color:var(--accent-dark);">60 seconds = ~130 words.</strong> Once your draft is complete, time yourself reading it aloud. Cut anything that slows the pace.
+        </div>
       </div>
 
       <div class="practice-card">
@@ -1908,6 +1950,23 @@
       advCard.style.pointerEvents = 'none';
       advCard.querySelector('div[style*="position:absolute"]').style.display = 'flex';
       advCard.querySelector('div[style*="filter"]').style.filter = 'blur(2px)';
+    }
+  }
+
+  function buildPitch() {
+    const why = document.getElementById('pitch-why').value.trim();
+    const how = document.getElementById('pitch-how').value.trim();
+    const what = document.getElementById('pitch-what').value.trim();
+    const result = document.getElementById('pitch-result');
+    if (why || how || what) {
+      result.style.display = 'block';
+      result.innerHTML =
+        '<strong style="color:var(--gold);font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;">Your 60-Second Pitch</strong><br/><br/>' +
+        '<strong style="color:#c87533;">WHY —</strong> ' + (why || '___') + '<br/><br/>' +
+        '<strong style="color:#c87533;">HOW —</strong> ' + (how || '___') + '<br/><br/>' +
+        '<strong style="color:#c87533;">WHAT —</strong> ' + (what || '___');
+    } else {
+      result.style.display = 'none';
     }
   }
 

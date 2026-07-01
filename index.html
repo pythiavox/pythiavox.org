@@ -1515,6 +1515,18 @@
     <!-- ── PITCH DECK BASICS ── -->
     <div id="practice-pitch-deck" class="practice-section">
 
+      <!-- Locked overlay -->
+      <div id="pitch-deck-locked">
+        <div class="practice-card" style="text-align:center;padding:48px 32px;">
+          <div style="font-size:2.5rem;cursor:pointer;" onclick="unlockPitchDeck()" title="🔒">🚧</div>
+          <h2 style="color:var(--accent-dark);font-size:1.6rem;margin:16px 0 8px;">Under Construction</h2>
+          <p style="color:var(--muted);max-width:420px;margin:0 auto;">This section is being built. Check back soon!</p>
+        </div>
+      </div>
+
+      <!-- Real content (hidden until unlocked) -->
+      <div id="pitch-deck-real" style="display:none;">
+
       <div class="practice-card">
         <h3>The Pitch Script</h3>
 
@@ -1613,6 +1625,7 @@
           📐 <strong style="color:var(--accent-dark);">Design rule:</strong> Dark background, large fonts (min 24pt), no more than 30 words per slide. If it takes more than 3 seconds to understand a slide, simplify it.
         </div>
       </div>
+      </div><!-- end pitch-deck-real -->
     </div>
 
   </section>
@@ -1952,6 +1965,14 @@
       advCard.style.pointerEvents = 'none';
       advCard.querySelector('div[style*="position:absolute"]').style.display = 'flex';
       advCard.querySelector('div[style*="filter"]').style.filter = 'blur(2px)';
+    }
+  }
+
+  function unlockPitchDeck() {
+    const attempt = prompt('Enter passphrase:');
+    if (attempt && attempt.trim().toLowerCase() === 'logician') {
+      document.getElementById('pitch-deck-locked').style.display = 'none';
+      document.getElementById('pitch-deck-real').style.display = 'block';
     }
   }
 

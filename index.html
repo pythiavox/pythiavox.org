@@ -864,6 +864,58 @@
       margin-left: 0;
     }
 
+    /* ── PRACTICE ── */
+    .practice-pills { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; justify-content:center; }
+    .practice-pill {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); padding: 8px 18px; border-radius: 20px;
+      font-family: var(--sans); font-size: 0.82rem; cursor: pointer; transition: all 0.2s;
+    }
+    .practice-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .practice-pill.active { background: var(--gold); color: #000; border-color: var(--gold); font-weight:600; }
+    .practice-section { display: none; }
+    .practice-section.active { display: block; }
+    .practice-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 32px; margin-bottom: 24px;
+    }
+    .practice-card h3 { color: var(--accent-dark); font-family: var(--serif); font-size:1.25rem; margin:0 0 12px; }
+    .practice-card p { font-family: var(--sans); font-size: 0.9rem; line-height:1.75; color:var(--muted); margin:0 0 14px; }
+    .formula-box {
+      background: var(--accent-light); border-left: 3px solid var(--gold);
+      padding: 16px 20px; border-radius: 0 6px 6px 0;
+      font-family: monospace; font-size: 0.95rem; color: var(--accent-dark);
+      margin: 16px 0; line-height:1.9;
+    }
+    .practice-input {
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); border-radius: 6px; padding: 10px 14px;
+      font-family: var(--sans); font-size: 0.9rem; width: 100%;
+      box-sizing: border-box; margin-top: 6px;
+    }
+    .practice-input:focus { outline: none; border-color: var(--accent); }
+    .practice-label { font-family:var(--sans); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-top:16px; display:block; }
+    .rule-item { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
+    .rule-item:last-child { border-bottom:none; }
+    .rule-num { min-width:30px; height:30px; background:var(--accent-light); color:var(--accent-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-size:0.8rem; font-weight:700; flex-shrink:0; }
+    .rule-text { font-family:var(--sans); font-size:0.9rem; line-height:1.65; color:var(--text); }
+    .rule-text strong { color:var(--accent-dark); }
+    .slide-row { display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:12px 0; border-bottom:1px solid var(--border); }
+    .slide-row:last-child { border-bottom:none; }
+    .slide-num { background:var(--gold); color:#000; border-radius:4px; font-family:var(--sans); font-size:0.75rem; font-weight:700; text-align:center; padding:4px 0; }
+    .slide-content strong { font-family:var(--sans); font-size:0.9rem; color:var(--accent-dark); display:block; margin-bottom:4px; }
+    .slide-content span { font-family:var(--sans); font-size:0.83rem; color:var(--muted); line-height:1.6; }
+    .pitch-script-block { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:20px 24px; margin-top:12px; }
+    .pitch-script-block h4 { font-family:var(--sans); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); margin:0 0 6px; }
+    .pitch-script-block p { font-family:var(--sans); font-size:0.88rem; line-height:1.75; color:var(--muted); margin:0; }
+    .pitch-script-block em { color:var(--accent); font-style:normal; }
+    .perf-tip { display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
+    .perf-tip:last-child { border-bottom:none; }
+    .perf-icon { font-size:1.4rem; min-width:32px; }
+    .perf-tip-text strong { font-family:var(--sans); font-size:0.92rem; color:var(--accent-dark); display:block; margin-bottom:3px; }
+    .perf-tip-text span { font-family:var(--sans); font-size:0.85rem; color:var(--muted); line-height:1.6; }
+    .vp-result { background:var(--accent-light); border:1px solid var(--border); border-radius:8px; padding:18px 22px; margin-top:20px; font-family:var(--sans); font-size:0.95rem; color:var(--accent-dark); line-height:1.8; display:none; }
+
     /* ── EMPTY STATE ── */
     .empty-state {
       text-align: center;
@@ -1125,21 +1177,366 @@
 
   <!-- ═══════════════════════════════ PROGRAMS ═════════════════════════ -->
   <section id="tab-programs" class="tab-panel">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;text-align:center;gap:16px;">
-      <div style="font-size:2.5rem;">🚧</div>
-      <h2 style="color:var(--accent-dark);font-size:1.6rem;">Under Construction</h2>
-      <p style="color:var(--muted);max-width:420px;">This section is being built. Check back soon!</p>
+    <div class="section-header">
+      <div class="eyebrow">PythiaVox Programs</div>
+      <h2>Programs</h2>
+      <p>Structured programs designed to de-risk startups, build resilience, and develop the skills founders need to thrive.</p>
     </div>
+
+    <!-- Business Concept Program -->
+    <div class="practice-card" style="max-width:820px;margin:0 auto 32px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <div style="background:var(--gold);color:#000;font-family:var(--sans);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 12px;border-radius:20px;">Featured Program</div>
+      </div>
+      <h3 style="font-size:1.5rem;margin-bottom:8px;">Business Concept</h3>
+      <p>The Business Concept is the logical foundation of your entire venture — the bridge between a raw idea ("I want to sell coffee") and every aspect of your business. It is your true north: a blueprint that grounds prototyping, market development, sales, and fundraising.</p>
+      <p>When your Business Concept is clear, you can compress years of thinking into a 2-line description. If you can't, you're not ready to build.</p>
+
+      <div style="background:var(--accent-light);border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 6px 6px 0;margin:20px 0;">
+        <div style="font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">Why do it?</div>
+        <div style="font-family:var(--sans);font-size:0.9rem;color:var(--text);line-height:1.75;">
+          It challenges you to answer three questions every investor and customer will ask:<br/>
+          <strong style="color:var(--accent-dark);">Why this?</strong> &nbsp;·&nbsp;
+          <strong style="color:var(--accent-dark);">Why should anyone care?</strong> &nbsp;·&nbsp;
+          <strong style="color:var(--accent-dark);">How do you make money?</strong>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <div style="font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px;">Examples</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
+            <div style="font-family:var(--sans);font-size:0.8rem;font-weight:700;color:var(--accent-dark);margin-bottom:4px;">Nike</div>
+            <div style="font-family:var(--sans);font-size:0.85rem;color:var(--muted);">Innovation &amp; Performance — athletic products built to push the limits of human potential.</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
+            <div style="font-family:var(--sans);font-size:0.8rem;font-weight:700;color:var(--accent-dark);margin-bottom:4px;">Apple</div>
+            <div style="font-family:var(--sans);font-size:0.85rem;color:var(--muted);">User Experience — products built from deep understanding of how people actually live and make decisions.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.1rem;margin-bottom:16px;">Business Concept Builder</h3>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;">Fill in each field to draft your Business Concept. Keep each answer to 1–2 sentences maximum.</p>
+
+      <span class="practice-label">Company / Venture Name</span>
+      <input class="practice-input" placeholder="e.g. PythiaVox" />
+
+      <span class="practice-label">One-Line Description</span>
+      <input class="practice-input" placeholder="e.g. An innovation agency that de-risks startups through structured trial and error." />
+
+      <span class="practice-label">The Problem You Solve</span>
+      <input class="practice-input" placeholder="e.g. Most startups fail not from bad ideas, but from avoidable execution mistakes." />
+
+      <span class="practice-label">Your Solution</span>
+      <input class="practice-input" placeholder="e.g. Structured coaching programs that build resilience and analytical decision-making." />
+
+      <span class="practice-label">Target Customer</span>
+      <input class="practice-input" placeholder="e.g. Early-stage founders in growth markets." />
+
+      <span class="practice-label">Value Proposition (FOR / WHO / WE DELIVER)</span>
+      <input class="practice-input" placeholder="e.g. For founders who struggle to survive early-stage challenges, we deliver de-risking frameworks." />
+
+      <span class="practice-label">Revenue Model</span>
+      <input class="practice-input" placeholder="e.g. Program fees, coaching retainers, and partnership sponsorships." />
+
+      <span class="practice-label">Competitive Advantage</span>
+      <input class="practice-input" placeholder="e.g. Neuroscience + Combinatorics + Design Thinking — applied to venture, not theory." />
+
+      <div style="margin-top:24px;padding:14px 18px;background:var(--accent-light);border-radius:8px;font-family:var(--sans);font-size:0.85rem;color:var(--muted);">
+        💡 <strong style="color:var(--accent-dark);">The 2-line test:</strong> Once complete, try to compress your entire Business Concept into 2 lines. If you can, you're ready to build. If you can't, keep refining.
+      </div>
+    </div>
+
+    <!-- More programs coming -->
+    <div style="text-align:center;padding:32px;font-family:var(--sans);color:var(--muted);font-size:0.9rem;">
+      More programs coming soon. <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">Contact us</a> to enquire about current availability.
+    </div>
+
   </section>
 
   <!-- ═══════════════════════════════ QUESTIONNAIRES ════════════════════ -->
   <!-- ═══════════════════════════════ PRACTICE ══════════════════════════ -->
   <section id="tab-practice" class="tab-panel">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;text-align:center;gap:16px;">
-      <div style="font-size:2.5rem;">🚧</div>
-      <h2 style="color:var(--accent-dark);font-size:1.6rem;">Under Construction</h2>
-      <p style="color:var(--muted);max-width:420px;">This section is being built. Check back soon!</p>
+    <div class="section-header">
+      <div class="eyebrow">Skill Building Exercises</div>
+      <h2>Practice</h2>
+      <p>Practical frameworks to sharpen your venture skills — from crafting your value proposition to delivering a winning pitch.</p>
     </div>
+
+    <div class="practice-pills">
+      <button class="practice-pill active" onclick="showPractice('vp')">Value Proposition</button>
+      <button class="practice-pill" onclick="showPractice('pitch-build')">Build Your Pitch</button>
+      <button class="practice-pill" onclick="showPractice('pitch-perf')">Pitch Performance</button>
+      <button class="practice-pill" onclick="showPractice('pitch-101')">Pitch 101 Rules</button>
+      <button class="practice-pill" onclick="showPractice('pitch-deck')">Pitch Deck Basics</button>
+    </div>
+
+    <!-- ── VALUE PROPOSITION ── -->
+    <div id="practice-vp" class="practice-section active">
+
+      <div class="practice-card">
+        <h3>Definition</h3>
+        <p>A value proposition is the conversion that results from the combination of a concise problem and a solution that yields an advantage, which in turn, converts to ROI.</p>
+        <p style="margin:0;">50% of the solution is the problem itself. A solution solves a problem when it directly converts from problem to solution — meaning the solution is a derivative of the problem. When the problem is clearly understood, clearly spoken and written, the likelihood of it being true is much higher.</p>
+      </div>
+
+      <div class="practice-card">
+        <h3>Formulaic Expression</h3>
+        <div class="formula-box">
+          <strong>VP</strong> = Conversion → [ (Problem × Solution) → Advantage ] → ROI<br/>
+          <br/>
+          P × S → A<br/>
+          A → Conversion<br/>
+          Conversion → ROI<br/>
+          <strong>Therefore: VP = f(P, S, A, ROI)</strong>
+        </div>
+        <p style="margin:0;"><strong style="color:var(--accent-dark);">In words:</strong> A clear problem combined with an effective solution creates an advantage, which drives conversion, ultimately resulting in ROI — the essence of a strong value proposition.</p>
+      </div>
+
+      <div class="practice-card">
+        <h3>Template</h3>
+        <p>Use the fill-in below to build your own value proposition. Your problem and solution must be logically true — you can test them by creating logical premises.</p>
+        <div class="formula-box" style="font-family:var(--sans);font-size:0.9rem;">
+          FOR [description of customer] WHO [statement of need], WE DELIVER [unique advantage]
+        </div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:20px;">Example: <em style="color:var(--accent);">For athletes who want high-performance running shoes, we deliver lightweight technology sneakers.</em></p>
+
+        <span class="practice-label">Your Customer</span>
+        <input class="practice-input" id="vp-customer" placeholder="e.g. early-stage founders" oninput="buildVP()" />
+
+        <span class="practice-label">Their Need / Problem</span>
+        <input class="practice-input" id="vp-need" placeholder="e.g. who struggle to articulate their business model" oninput="buildVP()" />
+
+        <span class="practice-label">Your Unique Advantage</span>
+        <input class="practice-input" id="vp-advantage" placeholder="e.g. we deliver structured de-risking programs that turn failure into resilience" oninput="buildVP()" />
+
+        <div class="vp-result" id="vp-result"></div>
+
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
+          <a href="Value Proposition Explained.pdf" download class="btn" style="text-decoration:none;">Download Value Proposition Guide ↓</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BUILD YOUR PITCH ── -->
+    <div id="practice-pitch-build" class="practice-section">
+      <div class="practice-card">
+        <h3>What Makes a Great Pitch?</h3>
+        <p>A pitch is not a presentation — it's a logical argument. Every sentence must build the case for why your venture should exist, why it will win, and why you are the team to do it. The goal is not to impress; it's to make the investor say "I need to know more."</p>
+        <p style="margin:0;">The structure below is a proven 3-minute pitch framework. Each block has a strict purpose. Stick to it until you can break it intentionally.</p>
+      </div>
+
+      <div class="practice-card">
+        <h3>The Pitch Script</h3>
+
+        <div class="pitch-script-block">
+          <h4>1. Hook — 15 seconds</h4>
+          <p>Open with a single striking statement or question that makes the problem undeniable.<br/>
+          <em>Template: "Every year, [X] people/businesses face [problem]. Most of them never solve it."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>2. Problem — 30 seconds</h4>
+          <p>State the problem clearly, specifically, and emotionally. The audience must feel it.<br/>
+          <em>Template: "[Target customer] struggle with [problem] because [root cause]. This costs them [consequence]."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>3. Solution — 30 seconds</h4>
+          <p>Introduce your product or service as the direct answer to the stated problem. No feature lists.<br/>
+          <em>Template: "[Company] is a [category] that helps [customer] [do X] by [unique mechanism]."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>4. Market — 20 seconds</h4>
+          <p>Show the scale of the opportunity — TAM, SAM, or SOM depending on your stage.<br/>
+          <em>Template: "The [market] is a $[X]B opportunity, and we are targeting the [$Y]M segment of [specific niche]."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>5. Business Model — 20 seconds</h4>
+          <p>Explain simply how you make money. One sentence if possible.<br/>
+          <em>Template: "We charge [who] [how much] for [what] on a [subscription / per-use / licensing] basis."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>6. Traction — 20 seconds</h4>
+          <p>Show evidence that the market wants this. Revenue, users, partnerships, LOIs, pilots.<br/>
+          <em>Template: "Since [date] we have [metric: X users / $Y revenue / Z partnerships], growing [rate]."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>7. Team — 15 seconds</h4>
+          <p>Why are you and your team uniquely suited to win this? Relevant background only.<br/>
+          <em>Template: "Our team brings [X years] in [domain], having [relevant achievement]."</em></p>
+        </div>
+        <div class="pitch-script-block" style="margin-top:10px;">
+          <h4>8. The Ask — 10 seconds</h4>
+          <p>Be specific about what you need and what you will do with it.<br/>
+          <em>Template: "We are raising $[X] to [achieve milestone] within [timeframe]."</em></p>
+        </div>
+
+        <div style="margin-top:24px;padding:16px 20px;background:var(--accent-light);border-radius:8px;font-family:var(--sans);font-size:0.85rem;color:var(--muted);">
+          ⏱ <strong style="color:var(--accent-dark);">Time yourself.</strong> A 3-minute pitch is ~400 words. Practice out loud — not in your head.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PITCH PERFORMANCE ── -->
+    <div id="practice-pitch-perf" class="practice-section">
+      <div class="practice-card">
+        <h3>Delivery Is Half the Battle</h3>
+        <p>You can have the best pitch script in the room and still lose the meeting. Performance is the bridge between your content and your credibility. These are the fundamentals.</p>
+
+        <div class="perf-tip">
+          <div class="perf-icon">👁</div>
+          <div class="perf-tip-text">
+            <strong>Eye Contact</strong>
+            <span>Speak to people, not slides. If you have 3 people in the room, divide your attention equally. Hold eye contact for 3–5 seconds per person — long enough to connect, short enough not to unnerve.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🎙</div>
+          <div class="perf-tip-text">
+            <strong>Voice & Pacing</strong>
+            <span>Slow down when making your most important points. Silence is powerful — a 2-second pause after a key statement lands harder than rushing to fill it. Vary your pace; monotone loses the room in 90 seconds.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🧍</div>
+          <div class="perf-tip-text">
+            <strong>Body Language</strong>
+            <span>Stand still or move with intention. Pacing randomly signals anxiety. Plant your feet, use open gestures at chest height, and avoid crossing your arms or touching your face.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🔢</div>
+          <div class="perf-tip-text">
+            <strong>Know Your Numbers Cold</strong>
+            <span>If you hesitate on your revenue figure, burn rate, or market size, the meeting is over. Rehearse your numbers until they are automatic. Write them on a card. Say them in the shower.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🔁</div>
+          <div class="perf-tip-text">
+            <strong>Repetition Builds Fluency</strong>
+            <span>Practice the full pitch out loud at least 20 times before your first real pitch. Record yourself. Watch it back. The discomfort of watching yourself is the fastest feedback loop you have.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🛑</div>
+          <div class="perf-tip-text">
+            <strong>Handle Interruptions Gracefully</strong>
+            <span>When an investor interrupts with a question, answer it fully and then say "Coming back to where I was..." Don't lose your thread. Don't skip sections because of interruptions — finish the story.</span>
+          </div>
+        </div>
+        <div class="perf-tip">
+          <div class="perf-icon">🏁</div>
+          <div class="perf-tip-text">
+            <strong>Close Deliberately</strong>
+            <span>Always end with a clear next step. "I'd love to schedule a follow-up call this week — are you available Thursday or Friday?" Don't end with "Any questions?" and drift off. Own the close.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PITCH 101 RULES ── -->
+    <div id="practice-pitch-101" class="practice-section">
+      <div class="practice-card">
+        <h3>The Non-Negotiables</h3>
+        <p>These are the rules that separate pitches that get funded from pitches that get polite applause. Break them at your own risk.</p>
+
+        <div class="rule-item">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Lead with the problem, not the product.</strong> No one cares about your solution before they feel the problem. Make them feel the pain first.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>One message per slide.</strong> If a slide needs a paragraph to explain it, it needs to be redesigned. One idea. One image. One number.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>Never read from your slides.</strong> Your slides are visual support. You are the pitch. If you are reading, you are not presenting.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">4</div>
+          <div class="rule-text"><strong>Pitch outcomes, not features.</strong> Investors don't fund features — they fund outcomes. "We save users 3 hours a week" beats "We have an AI-powered dashboard."</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">5</div>
+          <div class="rule-text"><strong>Your market size must be real.</strong> Bottom-up is always more credible than top-down. "We can reach 50,000 customers at $200/year = $10M TAM" beats "$50B global market."</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">6</div>
+          <div class="rule-text"><strong>Anticipate the top 5 objections.</strong> Before every pitch, write down the 5 hardest questions you could be asked. Prepare crisp answers. They will be asked.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">7</div>
+          <div class="rule-text"><strong>Always have a specific ask.</strong> "We are raising $500K on a $3M cap SAFE to reach X milestone by Y date." Vague asks signal unreadiness.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">8</div>
+          <div class="rule-text"><strong>Competition is not "we have none."</strong> Every business has competition — direct or indirect. Acknowledging it shows maturity. Denying it destroys credibility.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">9</div>
+          <div class="rule-text"><strong>Tell a story, not a presentation.</strong> The best pitches follow a narrative arc: world before → disruption → your solution → world after. Make investors feel the journey.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">10</div>
+          <div class="rule-text"><strong>Send the deck before the meeting.</strong> A prepared investor is a better conversation partner. Never walk in cold if you can help it.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PITCH DECK BASICS ── -->
+    <div id="practice-pitch-deck" class="practice-section">
+      <div class="practice-card">
+        <h3>The 10-Slide Framework</h3>
+        <p>A pitch deck is not your business plan — it is a visual argument. Each slide must earn its place. This is the standard sequence used by investors worldwide. Deviate only when you have a compelling reason.</p>
+
+        <div class="slide-row">
+          <div class="slide-num">01</div>
+          <div class="slide-content"><strong>Cover</strong><span>Company name, tagline (one sentence), your name, date. Make it clean. This sets the visual tone.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">02</div>
+          <div class="slide-content"><strong>Problem</strong><span>The pain you are solving. Make it visceral. Use data, a story, or a quote from a real customer. The investor must feel it.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">03</div>
+          <div class="slide-content"><strong>Solution</strong><span>Your product or service as the direct answer. One screenshot or visual. Avoid feature lists — show the outcome.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">04</div>
+          <div class="slide-content"><strong>Market Size</strong><span>TAM / SAM / SOM. Use bottom-up math. Show you understand which slice you are realistically targeting and why it is large enough to matter.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">05</div>
+          <div class="slide-content"><strong>Product</strong><span>Demo, screenshots, or walkthrough of the core user experience. Show, don't tell. If you have a live product, link to it.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">06</div>
+          <div class="slide-content"><strong>Business Model</strong><span>How you make money. Pricing, unit economics, LTV vs CAC if you have the data. Keep it to one slide.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">07</div>
+          <div class="slide-content"><strong>Traction</strong><span>Revenue, users, growth rate, partnerships, pilot results, LOIs. A chart is worth a thousand bullet points. Show the line going up.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">08</div>
+          <div class="slide-content"><strong>Competition</strong><span>A 2×2 or feature matrix is fine. Show your differentiation clearly. Never say "no competition." Show why you win.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">09</div>
+          <div class="slide-content"><strong>Team</strong><span>Photos, names, titles, and the one credential per person that proves you are the team to win this market. Advisors if relevant.</span></div>
+        </div>
+        <div class="slide-row">
+          <div class="slide-num">10</div>
+          <div class="slide-content"><strong>The Ask</strong><span>Amount raising, use of funds (3–4 buckets), key milestones this round gets you to. Contact info. Make it effortless to say yes.</span></div>
+        </div>
+
+        <div style="margin-top:24px;padding:16px 20px;background:var(--accent-light);border-radius:8px;font-family:var(--sans);font-size:0.85rem;color:var(--muted);">
+          📐 <strong style="color:var(--accent-dark);">Design rule:</strong> Dark background, large fonts (min 24pt), no more than 30 words per slide. If it takes more than 3 seconds to understand a slide, simplify it.
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- ═══════════════════════════════ PODCAST ═══════════════════════════ -->
@@ -1444,6 +1841,28 @@
   }
 
   renderGlossary();
+
+  // ── PRACTICE ──
+  function showPractice(id) {
+    document.querySelectorAll('.practice-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.practice-pill').forEach(b => b.classList.remove('active'));
+    document.getElementById('practice-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  function buildVP() {
+    const customer = document.getElementById('vp-customer').value.trim();
+    const need = document.getElementById('vp-need').value.trim();
+    const advantage = document.getElementById('vp-advantage').value.trim();
+    const result = document.getElementById('vp-result');
+    if (customer || need || advantage) {
+      result.style.display = 'block';
+      result.innerHTML = '<strong style="color:var(--gold);font-family:var(--sans);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;">Your Value Proposition</strong><br/><br/>' +
+        'For <strong>' + (customer || '___') + '</strong> who <strong>' + (need || '___') + '</strong>, we deliver <strong>' + (advantage || '___') + '</strong>.';
+    } else {
+      result.style.display = 'none';
+    }
+  }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>

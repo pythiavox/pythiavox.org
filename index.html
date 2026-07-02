@@ -915,6 +915,16 @@
     .perf-tip-text strong { font-family:var(--sans); font-size:0.92rem; color:var(--accent-dark); display:block; margin-bottom:3px; }
     .perf-tip-text span { font-family:var(--sans); font-size:0.85rem; color:var(--muted); line-height:1.6; }
     .vp-result { background:var(--accent-light); border:1px solid var(--border); border-radius:8px; padding:18px 22px; margin-top:20px; font-family:var(--sans); font-size:0.95rem; color:var(--accent-dark); line-height:1.8; display:none; }
+    .check-btn { background:var(--surface); border:1px solid var(--accent); color:var(--accent-dark); font-family:var(--sans); font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:9px 20px; border-radius:4px; cursor:pointer; margin-top:14px; transition:all 0.2s; }
+    .check-btn:hover { background:var(--accent); color:var(--bg); }
+    .check-result { display:none; border:1px solid; border-radius:8px; padding:16px 18px; margin-top:12px; font-family:var(--sans); font-size:0.87rem; line-height:1.75; }
+    .save-btn { background:var(--gold); color:#000; font-family:var(--sans); font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:9px 20px; border:none; border-radius:4px; cursor:pointer; margin-top:12px; display:inline-block; }
+    .save-btn:hover { opacity:0.85; }
+    .btn-sm { background:var(--surface); border:1px solid var(--border); color:var(--accent-dark); font-family:var(--sans); font-size:0.75rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:7px 16px; border-radius:4px; cursor:pointer; transition:all 0.2s; }
+    .btn-sm:hover { background:var(--accent-light); border-color:var(--accent); }
+    .progress-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:24px 28px; margin-bottom:20px; max-width:820px; margin-left:auto; margin-right:auto; }
+    .progress-badge { background:var(--accent-light); color:#c87533; font-family:var(--sans); font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:12px; }
+    .progress-preview { font-family:var(--sans); font-size:0.85rem; color:var(--text); line-height:1.75; white-space:pre-wrap; background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:14px 16px; margin:14px 0; }
 
     /* ── EMPTY STATE ── */
     .empty-state {
@@ -1177,6 +1187,18 @@
 
   <!-- ═══════════════════════════════ PROGRAMS ═════════════════════════ -->
   <section id="tab-programs" class="tab-panel">
+
+    <!-- Locked overlay -->
+    <div id="programs-locked">
+      <div class="practice-card" style="text-align:center;padding:48px 32px;max-width:520px;margin:60px auto;">
+        <div style="font-size:2.5rem;cursor:pointer;" onclick="unlockPrograms()">🚧</div>
+        <h2 style="color:var(--accent-dark);font-size:1.6rem;margin:16px 0 8px;">Under Construction</h2>
+        <p style="color:var(--muted);max-width:420px;margin:0 auto;">This section is being built. Check back soon!</p>
+      </div>
+    </div>
+
+    <!-- Real content (hidden until unlocked) -->
+    <div id="programs-real" style="display:none;">
     <div class="section-header">
       <div class="eyebrow">PythiaVox Programs</div>
       <h2>Programs</h2>
@@ -1252,6 +1274,7 @@
     <div style="text-align:center;padding:32px;font-family:var(--sans);color:var(--muted);font-size:0.9rem;">
       More programs coming soon. <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">Contact us</a> to enquire about current availability.
     </div>
+    </div><!-- end programs-real -->
 
   </section>
 
@@ -1316,6 +1339,8 @@
         <input class="practice-input" id="vp-advantage" placeholder="e.g. we deliver structured de-risking programs that turn failure into resilience" oninput="buildVP()" />
 
         <div class="vp-result" id="vp-result"></div>
+        <button class="check-btn" onclick="checkVP1()">Check My Work ✓</button>
+        <div class="check-result" id="vp1-check-result"></div>
 
         <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
           <a href="Value Proposition Explained.pdf" download class="btn" style="text-decoration:none;">Download Value Proposition Guide ↓</a>
@@ -1349,6 +1374,8 @@
           <input class="practice-input" id="vp-roi" placeholder="e.g. Higher venture survival rates and measurable growth." oninput="buildVPFormula()" />
 
           <div class="vp-result" id="vp-result-formula" style="font-size:0.88rem;line-height:2;"></div>
+          <button class="check-btn" onclick="checkVP2()">Check My Work ✓</button>
+          <div class="check-result" id="vp2-check-result"></div>
         </div>
       </div>
     </div>
@@ -1397,6 +1424,8 @@
         <textarea class="practice-input" id="pitch-what" rows="3" placeholder="e.g. We are PythiaVox — an innovation agency that de-risks startups through structured trial and error programs, because ventures must thrive." oninput="buildPitch()" style="resize:vertical;min-height:80px;"></textarea>
 
         <div class="vp-result" id="pitch-result" style="font-size:0.9rem;line-height:1.9;white-space:pre-wrap;"></div>
+        <button class="check-btn" onclick="checkPitch()">Check My Work ✓</button>
+        <div class="check-result" id="pitch-check-result"></div>
 
         <div style="margin-top:24px;padding:14px 18px;background:var(--accent-light);border-radius:8px;font-family:var(--sans);font-size:0.85rem;color:var(--muted);">
           ⏱ <strong style="color:var(--accent-dark);">60 seconds = ~130 words.</strong> Once your draft is complete, time yourself reading it aloud. Cut anything that slows the pace.
@@ -1704,11 +1733,12 @@
 
   <!-- ═══════════════════════════════ PROGRESS ══════════════════════════ -->
   <section id="tab-progress" class="tab-panel">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;text-align:center;gap:16px;">
-      <div style="font-size:2.5rem;">🚧</div>
-      <h2 style="color:var(--accent-dark);font-size:1.6rem;">Under Construction</h2>
-      <p style="color:var(--muted);max-width:420px;">This section is being built. Check back soon!</p>
+    <div class="section-header">
+      <div class="eyebrow">Your Work</div>
+      <h2>Progress</h2>
+      <p>Your completed practice exercises are saved here. Download them as Word or PDF documents to revisit anytime.</p>
     </div>
+    <div id="progress-list"></div>
   </section>
 
   <!-- ═══════════════════════════════ GLOSSARY ══════════════════════════ -->
@@ -1968,6 +1998,196 @@
     }
   }
 
+  // ── CHECKER / PROGRESS / DOWNLOADS ──
+
+  function wordsIn(str) { return str.trim().split(/\s+/).filter(w => w.length > 0).length; }
+
+  function showCheckResult(elId, pass, issues, saveType) {
+    const el = document.getElementById(elId);
+    el.style.display = 'block';
+    if (pass) {
+      el.style.borderColor = '#4caf50';
+      el.style.background = 'rgba(76,175,80,0.07)';
+      el.innerHTML = '✅ <strong style="color:#4caf50;">Great work!</strong> Your response is well-structured and complete.' +
+        '<br/><button class="save-btn" onclick="saveProgress(\'' + saveType + '\')">Save to Progress →</button>';
+    } else {
+      el.style.borderColor = '#e87878';
+      el.style.background = 'rgba(232,120,120,0.07)';
+      el.innerHTML = '⚠️ <strong style="color:#e87878;">A few things to refine:</strong><ul style="margin:10px 0 0;padding-left:20px;">' +
+        issues.map(i => '<li style="font-size:0.85rem;color:var(--muted);margin-bottom:6px;">' + i + '</li>').join('') + '</ul>';
+    }
+  }
+
+  function checkVP1() {
+    const customer = document.getElementById('vp-customer').value.trim();
+    const need     = document.getElementById('vp-need').value.trim();
+    const adv      = document.getElementById('vp-advantage').value.trim();
+    const issues   = [];
+    if (!customer || wordsIn(customer) < 2) issues.push('Your Customer field is too brief — be specific about who you serve (e.g. "2–5 year old startups in growth markets").');
+    if (!need || wordsIn(need) < 3)         issues.push('Their Need field needs more detail — describe the specific problem or situation your customer faces.');
+    if (!adv || wordsIn(adv) < 4)           issues.push('Your Unique Advantage is too vague — what exactly do you deliver, and why is it different?');
+    if (customer && need && customer.toLowerCase() === need.toLowerCase()) issues.push('Your Customer and Need fields appear identical — they should answer different questions.');
+    showCheckResult('vp1-check-result', issues.length === 0, issues, 'vp1');
+  }
+
+  function checkVP2() {
+    const p   = document.getElementById('vp-p').value.trim();
+    const s   = document.getElementById('vp-s').value.trim();
+    const a   = document.getElementById('vp-a').value.trim();
+    const roi = document.getElementById('vp-roi').value.trim();
+    const issues = [];
+    if (!p || wordsIn(p) < 5)   issues.push('Problem (P) needs more precision — state it as a specific, observable fact (who + what + consequence).');
+    if (!s || wordsIn(s) < 5)   issues.push('Solution (S) is too brief — it should clearly derive from the problem you stated.');
+    if (!a || wordsIn(a) < 4)   issues.push('Advantage (A) needs to describe a concrete outcome that results from P × S.');
+    if (!roi || wordsIn(roi) < 4) issues.push('ROI field should describe the measurable return or conversion your advantage creates.');
+    if (p && s && p.toLowerCase() === s.toLowerCase()) issues.push('Your Problem and Solution appear identical — remember: the solution is a derivative of the problem, not a restatement.');
+    showCheckResult('vp2-check-result', issues.length === 0, issues, 'vp2');
+  }
+
+  function checkPitch() {
+    const why  = document.getElementById('pitch-why').value.trim();
+    const how  = document.getElementById('pitch-how').value.trim();
+    const what = document.getElementById('pitch-what').value.trim();
+    const issues = [];
+    if (!why || wordsIn(why) < 10)  issues.push('WHY is too short — include context, a story, or a striking fact that sets up the problem.');
+    if (!how || wordsIn(how) < 8)   issues.push('HOW needs more detail — describe your solution clearly enough that a stranger would understand it.');
+    if (!what || wordsIn(what) < 8) issues.push('WHAT should tell the audience who you are and what you specifically offer — make it memorable.');
+    const total = wordsIn(why) + wordsIn(how) + wordsIn(what);
+    if (total > 160) issues.push('Your pitch is over ~160 words — aim for 130 words to stay within 60 seconds when spoken.');
+    showCheckResult('pitch-check-result', issues.length === 0, issues, 'pitch');
+  }
+
+  function saveProgress(type) {
+    let saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+    let item = { id: now.getTime(), type: '', date: dateStr, result: '' };
+
+    if (type === 'vp1') {
+      const c = document.getElementById('vp-customer').value.trim();
+      const n = document.getElementById('vp-need').value.trim();
+      const a = document.getElementById('vp-advantage').value.trim();
+      item.type   = 'Value Proposition — Forbes®';
+      item.result = 'For ' + c + ' who ' + n + ', we deliver ' + a + '.';
+    } else if (type === 'vp2') {
+      const p   = document.getElementById('vp-p').value.trim();
+      const s   = document.getElementById('vp-s').value.trim();
+      const a   = document.getElementById('vp-a').value.trim();
+      const roi = document.getElementById('vp-roi').value.trim();
+      item.type   = 'Value Proposition — Formulaic';
+      item.result = 'P: ' + p + '\n\nS: ' + s + '\n\nA (P × S): ' + a + '\n\nROI: ' + roi;
+    } else if (type === 'pitch') {
+      const why  = document.getElementById('pitch-why').value.trim();
+      const how  = document.getElementById('pitch-how').value.trim();
+      const what = document.getElementById('pitch-what').value.trim();
+      item.type   = '60-Second Pitch';
+      item.result = 'WHY — ' + why + '\n\nHOW — ' + how + '\n\nWHAT — ' + what;
+    }
+
+    saved.unshift(item);
+    localStorage.setItem('pythiavox_progress', JSON.stringify(saved));
+    showTab('progress');
+    renderProgress();
+  }
+
+  function renderProgress() {
+    const container = document.getElementById('progress-list');
+    if (!container) return;
+    const saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
+    if (saved.length === 0) {
+      container.innerHTML = '<div style="text-align:center;padding:60px 24px;font-family:var(--sans);color:var(--muted);">No saved work yet. Complete a practice exercise and click "Save to Progress" to see it here.</div>';
+      return;
+    }
+    container.innerHTML = saved.map(item =>
+      '<div class="progress-card">' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">' +
+          '<div><span class="progress-badge">' + item.type + '</span>' +
+          '<div style="font-family:var(--sans);font-size:0.78rem;color:var(--muted);margin-top:6px;">Saved ' + item.date + '</div></div>' +
+          '<button onclick="deleteProgress(' + item.id + ')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px 8px;" title="Delete">✕</button>' +
+        '</div>' +
+        '<div class="progress-preview">' + item.result + '</div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+          '<button onclick="downloadWord(' + item.id + ')" class="btn-sm">Word ↓</button>' +
+          '<button onclick="downloadPDF(' + item.id + ')" class="btn-sm">PDF ↓</button>' +
+        '</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  function deleteProgress(id) {
+    let saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
+    if (!confirm('Delete this saved item?')) return;
+    saved = saved.filter(i => i.id !== id);
+    localStorage.setItem('pythiavox_progress', JSON.stringify(saved));
+    renderProgress();
+  }
+
+  function downloadWord(id) {
+    const saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
+    const item  = saved.find(i => i.id === id);
+    if (!item) return;
+    const html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>' + item.type + '</title></head><body style="font-family:Arial,sans-serif;margin:48px;color:#111;">' +
+      '<h1 style="color:#c87533;font-size:22px;margin-bottom:4px;">' + item.type + '</h1>' +
+      '<p style="color:#888;font-size:11px;margin-bottom:24px;">Saved: ' + item.date + ' &nbsp;|&nbsp; PythiaVox &nbsp;|&nbsp; pythiavox.org</p>' +
+      '<hr style="border:none;border-top:1px solid #ddd;margin-bottom:24px;"/>' +
+      '<p style="font-size:14px;line-height:1.9;white-space:pre-wrap;">' + item.result.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p>' +
+      '</body></html>';
+    const blob = new Blob(['﻿', html], { type: 'application/msword' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'PythiaVox_' + item.type.replace(/[^a-z0-9]/gi, '_') + '.doc';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function downloadPDF(id) {
+    const saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
+    const item  = saved.find(i => i.id === id);
+    if (!item) return;
+    if (!window.jspdf) { alert('PDF library is still loading — please try again in a moment.'); return; }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    // Background
+    doc.setFillColor(15, 15, 15);
+    doc.rect(0, 0, 210, 297, 'F');
+    // Title
+    doc.setTextColor(200, 117, 51);
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text(item.type, 20, 28);
+    // Meta
+    doc.setTextColor(136, 136, 136);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Saved: ' + item.date + '   |   PythiaVox   |   pythiavox.org', 20, 38);
+    // Divider
+    doc.setDrawColor(42, 42, 42);
+    doc.line(20, 43, 190, 43);
+    // Body
+    doc.setTextColor(230, 230, 230);
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    const lines = doc.splitTextToSize(item.result, 170);
+    doc.text(lines, 20, 54);
+    // Footer
+    doc.setTextColor(80, 80, 80);
+    doc.setFontSize(8);
+    doc.text('PythiaVox  |  pythiavox.org', 20, 288);
+    doc.save('PythiaVox_' + item.type.replace(/[^a-z0-9]/gi, '_') + '.pdf');
+  }
+
+  // Init progress on page load
+  document.addEventListener('DOMContentLoaded', renderProgress);
+
+  function unlockPrograms() {
+    const attempt = prompt('Enter passphrase:');
+    if (attempt && attempt.trim().toLowerCase() === 'logician') {
+      document.getElementById('programs-locked').style.display = 'none';
+      document.getElementById('programs-real').style.display = 'block';
+    }
+  }
+
   function unlockPitchDeck() {
     const attempt = prompt('Enter passphrase:');
     if (attempt && attempt.trim().toLowerCase() === 'logician') {
@@ -2013,6 +2233,7 @@
     }
   }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   new QRCode(document.getElementById('podcast-qr'), {

@@ -1,0 +1,136 @@
+<svg width="680" height="680" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>1930s ribbon microphone — PythiaVox</title>
+<desc>Vintage illustration of a 1930s ribbon condenser microphone with art deco styling, horizontal grille slats, curved chrome yoke arms, and stand mount</desc>
+<defs>
+  <linearGradient id="g-body" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#181818"/>
+    <stop offset="25%" stop-color="#2c2c2c"/>
+    <stop offset="50%" stop-color="#242424"/>
+    <stop offset="75%" stop-color="#2c2c2c"/>
+    <stop offset="100%" stop-color="#181818"/>
+  </linearGradient>
+  <linearGradient id="g-cap" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#1e1e1e"/>
+    <stop offset="45%" stop-color="#363636"/>
+    <stop offset="100%" stop-color="#1a1a1a"/>
+  </linearGradient>
+  <linearGradient id="g-chrome" x1="188" y1="0" x2="492" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#444"/>
+    <stop offset="25%" stop-color="#909090"/>
+    <stop offset="50%" stop-color="#aaa"/>
+    <stop offset="75%" stop-color="#909090"/>
+    <stop offset="100%" stop-color="#444"/>
+  </linearGradient>
+  <linearGradient id="g-stand" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a2a2a"/>
+    <stop offset="35%" stop-color="#5a5a5a"/>
+    <stop offset="65%" stop-color="#4a4a4a"/>
+    <stop offset="100%" stop-color="#222"/>
+  </linearGradient>
+  <clipPath id="grille-clip">
+    <rect x="280" y="154" width="120" height="204"/>
+  </clipPath>
+</defs>
+
+<!-- Dark background -->
+<rect x="0" y="0" width="680" height="680" fill="#0a0a0a"/>
+
+<!-- Ambient copper glow -->
+<ellipse cx="340" cy="265" rx="105" ry="200" fill="#c87533" opacity="0.05"/>
+
+<!-- Base plate -->
+<ellipse cx="340" cy="656" rx="85" ry="11" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+<ellipse cx="340" cy="653" rx="85" ry="11" fill="#222" stroke="#333" stroke-width="0.5"/>
+<ellipse cx="340" cy="649" rx="70" ry="7" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+
+<!-- Stand pole -->
+<rect x="328" y="472" width="24" height="180" rx="4" fill="url(#g-stand)"/>
+<rect x="321" y="466" width="38" height="11" rx="4" fill="#383838" stroke="#4a4a4a" stroke-width="0.5"/>
+
+<!-- Cable connector -->
+<rect x="331" y="454" width="18" height="16" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+<rect x="333" y="457" width="14" height="1.5" rx="0.5" fill="#444"/>
+<rect x="333" y="461" width="14" height="1.5" rx="0.5" fill="#444"/>
+<rect x="333" y="465" width="14" height="1.5" rx="0.5" fill="#444"/>
+
+<!-- Yoke arms -->
+<path d="M 263 208 C 205 208 188 290 188 335 C 188 395 210 442 258 456 L 329 468" fill="none" stroke="url(#g-chrome)" stroke-width="11" stroke-linecap="round"/>
+<path d="M 263 208 C 210 208 196 290 196 335 C 196 393 216 439 263 452" fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round" opacity="0.18"/>
+<path d="M 417 208 C 475 208 492 290 492 335 C 492 395 470 442 422 456 L 351 468" fill="none" stroke="url(#g-chrome)" stroke-width="11" stroke-linecap="round"/>
+<path d="M 417 208 C 470 208 484 290 484 335 C 484 393 464 439 417 452" fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round" opacity="0.18"/>
+
+<!-- Pivot screws -->
+<circle cx="263" cy="208" r="9" fill="#222" stroke="#777" stroke-width="1.5"/>
+<circle cx="263" cy="208" r="4" fill="#1a1a1a" stroke="#555" stroke-width="0.5"/>
+<line x1="260" y1="208" x2="266" y2="208" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="263" y1="205" x2="263" y2="211" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="417" cy="208" r="9" fill="#222" stroke="#777" stroke-width="1.5"/>
+<circle cx="417" cy="208" r="4" fill="#1a1a1a" stroke="#555" stroke-width="0.5"/>
+<line x1="414" y1="208" x2="420" y2="208" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="417" y1="205" x2="417" y2="211" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
+
+<!-- Mic body shadow -->
+<rect x="265" y="76" width="152" height="382" rx="22" fill="#060606"/>
+<!-- Main body -->
+<rect x="263" y="74" width="152" height="382" rx="22" fill="url(#g-body)" stroke="#333" stroke-width="1"/>
+<!-- Chrome side strips -->
+<rect x="263" y="96" width="3" height="338" fill="#111"/>
+<rect x="263" y="96" width="1.5" height="338" fill="#555" opacity="0.45"/>
+<rect x="412" y="96" width="3" height="338" fill="#111"/>
+<rect x="413.5" y="96" width="1.5" height="338" fill="#555" opacity="0.45"/>
+
+<!-- Top cap -->
+<path d="M 285 74 Q 263 74 263 96 L 263 152 L 415 152 L 415 96 Q 415 74 393 74 Z" fill="url(#g-cap)"/>
+<rect x="263" y="150" width="152" height="2" fill="#c87533" opacity="0.5"/>
+<ellipse cx="340" cy="86" rx="52" ry="7" fill="#fff" opacity="0.022"/>
+<!-- Art deco chevron -->
+<path d="M 340 80 L 353 93 L 340 90 L 327 93 Z" fill="#c87533" opacity="0.45"/>
+<path d="M 340 87 L 350 97 L 340 94 L 330 97 Z" fill="#c87533" opacity="0.2"/>
+<!-- Logo -->
+<text x="340" y="124" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#c87533" letter-spacing="3" opacity="0.9">PYTHIAVOX</text>
+<rect x="275" y="116" width="30" height="1" rx="0.5" fill="#c87533" opacity="0.35"/>
+<rect x="375" y="116" width="30" height="1" rx="0.5" fill="#c87533" opacity="0.35"/>
+<rect x="275" y="131" width="30" height="1" rx="0.5" fill="#c87533" opacity="0.35"/>
+<rect x="375" y="131" width="30" height="1" rx="0.5" fill="#c87533" opacity="0.35"/>
+<rect x="270" y="138" width="4" height="4" rx="1" fill="#c87533" opacity="0.25"/>
+<rect x="406" y="138" width="4" height="4" rx="1" fill="#c87533" opacity="0.25"/>
+
+<!-- Grille -->
+<rect x="277" y="152" width="126" height="206" rx="3" fill="#060606" stroke="#1e1e1e" stroke-width="1"/>
+<rect x="277" y="152" width="126" height="3" fill="#222"/>
+<rect x="277" y="355" width="126" height="3" fill="#222"/>
+<g clip-path="url(#grille-clip)">
+  <rect x="280" y="156" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="167" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="178" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="189" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="200" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="211" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="222" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="233" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="244" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="255" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="266" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="277" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="288" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="299" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="310" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="321" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="332" width="120" height="5" rx="1" fill="#252525"/>
+  <rect x="280" y="343" width="120" height="5" rx="1" fill="#252525"/>
+</g>
+<rect x="328" y="152" width="24" height="206" fill="#fff" opacity="0.012" rx="2"/>
+<rect x="277" y="152" width="14" height="206" fill="#000" opacity="0.14" rx="2"/>
+<rect x="389" y="152" width="14" height="206" fill="#000" opacity="0.14" rx="2"/>
+
+<!-- Bottom cap -->
+<path d="M 263 358 L 415 358 L 415 434 Q 415 456 393 456 L 285 456 Q 263 456 263 434 Z" fill="url(#g-cap)"/>
+<rect x="263" y="358" width="152" height="2" fill="#c87533" opacity="0.5"/>
+<rect x="293" y="376" width="94" height="40" rx="4" fill="#181818" stroke="#2e2e2e" stroke-width="0.5"/>
+<rect x="294" y="377" width="92" height="38" rx="3" fill="none" stroke="#c87533" stroke-width="0.5" opacity="0.28"/>
+<text x="340" y="394" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="400" fill="#555" letter-spacing="2">RIBBON</text>
+<text x="340" y="410" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#777" letter-spacing="1">MODEL R-44</text>
+<!-- Bottom chevron -->
+<path d="M 340 449 L 351 441 L 340 444 L 329 441 Z" fill="#c87533" opacity="0.4"/>
+<path d="M 340 444 L 349 437 L 340 440 L 331 437 Z" fill="#c87533" opacity="0.2"/>
+</svg>

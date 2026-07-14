@@ -991,6 +991,48 @@
       display: none;
       margin-top: 16px;
     }
+    /* ── FLOATING BOOK BUBBLE ── */
+    .float-book {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .float-book-bubble {
+      background: #c87533;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 9px 15px;
+      border-radius: 20px 20px 4px 20px;
+      box-shadow: 0 4px 16px rgba(200,117,51,0.35);
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
+      line-height: 1.4;
+      text-align: right;
+    }
+    .float-book-bubble:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,117,51,0.45); }
+    .float-book-dot {
+      width: 10px; height: 10px;
+      background: #c87533;
+      border-radius: 50%;
+      align-self: flex-end;
+      margin-right: 12px;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+    @media (max-width: 600px) { .float-book { top: auto; bottom: 24px; right: 16px; } }
+
     /* ── BOOKING CTA ── */
     .booking-cta { margin-top:28px; text-align:center; font-family:var(--sans); font-size:0.88rem; color:var(--muted); padding:18px 24px; border-top:1px solid var(--border); }
     .booking-cta a { color:#c87533; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(200,117,51,0.4); cursor:pointer; }
@@ -1793,6 +1835,11 @@
 <footer>
   © 2026 PythiaVox &nbsp;·&nbsp; <a href="mailto:rhoda@pythiavox.org">rhoda@pythiavox.org</a> &nbsp;·&nbsp; <a href="https://pythiavox.org">pythiavox.org</a>
 </footer>
+
+<div class="float-book" onclick="showTab('calendar')">
+  <div class="float-book-bubble">Book a session →<br/><span style="font-weight:400;font-size:0.72rem;opacity:0.9;">Free 15-min · Full coaching</span></div>
+  <div class="float-book-dot"></div>
+</div>
 
 <script>
   // ── TAB SWITCHING ──

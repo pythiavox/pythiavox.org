@@ -2134,17 +2134,34 @@
     const saved = JSON.parse(localStorage.getItem('pythiavox_progress') || '[]');
     const item  = saved.find(i => i.id === id);
     if (!item) return;
-    const html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>' + item.type + '</title></head><body style="font-family:Arial,sans-serif;margin:48px;color:#111;">' +
-      '<h1 style="color:#c87533;font-size:22px;margin-bottom:4px;">' + item.type + '</h1>' +
-      '<p style="color:#888;font-size:11px;margin-bottom:24px;">Saved: ' + item.date + ' &nbsp;|&nbsp; PythiaVox &nbsp;|&nbsp; pythiavox.org</p>' +
-      '<hr style="border:none;border-top:1px solid #ddd;margin-bottom:24px;"/>' +
-      '<p style="font-size:14px;line-height:1.9;white-space:pre-wrap;">' + item.result.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p>' +
-      '</body></html>';
-    const blob = new Blob(['﻿', html], { type: 'application/msword' });
+
+    function rtfEsc(str) {
+      return str
+        .replace(/\\/g, '\\\\')
+        .replace(/\{/g, '\\{')
+        .replace(/\}/g, '\\}')
+        .replace(/\n/g, '\\par\n');
+    }
+
+    const rtf = [
+      '{\\rtf1\\ansi\\deff0',
+      '{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}}',
+      '{\\colortbl ;\\red200\\green117\\blue51;\\red100\\green100\\blue100;}',
+      '\\f0\\fs24\\sa200\\widowctrl\\hyphauto',
+      '{\\b\\fs36\\cf1 ' + rtfEsc(item.type) + '}\\par',
+      '{\\fs18\\cf2 Saved: ' + rtfEsc(item.date) + '   |   PythiaVox   |   pythiavox.org}\\par',
+      '\\par',
+      '{\\fs22 ' + rtfEsc(item.result) + '}\\par',
+      '\\par\\par',
+      '{\\fs16\\cf2 PythiaVox  |  pythiavox.org}',
+      '}'
+    ].join('\n');
+
+    const blob = new Blob([rtf], { type: 'application/rtf' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
     a.href     = url;
-    a.download = 'PythiaVox_' + item.type.replace(/[^a-z0-9]/gi, '_') + '.doc';
+    a.download = 'PythiaVox_' + item.type.replace(/[^a-z0-9]/gi, '_') + '.rtf';
     a.click();
     URL.revokeObjectURL(url);
   }

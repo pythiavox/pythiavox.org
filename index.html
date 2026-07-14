@@ -991,6 +991,11 @@
       display: none;
       margin-top: 16px;
     }
+    /* ── BOOKING CTA ── */
+    .booking-cta { margin-top:28px; text-align:center; font-family:var(--sans); font-size:0.88rem; color:var(--muted); padding:18px 24px; border-top:1px solid var(--border); }
+    .booking-cta a { color:#c87533; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(200,117,51,0.4); cursor:pointer; }
+    .booking-cta a:hover { border-bottom-color:#c87533; }
+
     /* ── PITCH SCRIPT EDITOR ── */
     .pitch-editor-wrap { display:none; margin-top:32px; border-top:1px solid var(--border); padding-top:28px; }
     .pitch-editor-wrap.visible { display:block; }
@@ -1390,6 +1395,7 @@
           <div class="check-result" id="vp2-check-result"></div>
         </div>
       </div>
+      <div class="booking-cta">Need further help? <a onclick="showTab('calendar')" href="#">Book a Free 15-Minute Session</a> or <a onclick="showTab('calendar')" href="#">Get The Full Pitch Coaching Service</a>, here!</div>
     </div>
 
     <!-- ── BUILD YOUR PITCH ── -->
@@ -1443,6 +1449,9 @@
         <!-- Rich text pitch script editor — unlocks on passing check -->
         <div class="pitch-editor-wrap" id="pitch-editor-wrap">
           <div class="pitch-editor-label">✍️ <span>Template complete</span> — now write your full pitch script below</div>
+          <div style="background:rgba(200,117,51,0.08);border:1px solid rgba(200,117,51,0.35);border-radius:8px;padding:14px 18px;margin-bottom:16px;font-family:var(--sans);font-size:0.85rem;line-height:1.75;color:var(--text);">
+            ⚠️ <strong style="color:#c87533;">Before you begin:</strong> Be ready to write and rewrite your script several times until it's sharp, clear, persuasive and authentic. Write extensively first to then reduce, not the other way around! If you attempt reduction too soon, you'll get stuck without breathing room for creativity and expression and will likely get writer's block!
+          </div>
           <div id="pitch-quill"></div>
           <div class="pitch-editor-actions">
             <button class="save-btn" onclick="savePitchScript()">Save Draft →</button>
@@ -1457,6 +1466,7 @@
         </div>
       </div>
 
+      <div class="booking-cta">Need further help? <a onclick="showTab('calendar')" href="#">Book a Free 15-Minute Session</a> or <a onclick="showTab('calendar')" href="#">Get The Full Pitch Coaching Service</a>, here!</div>
     </div>
 
     <!-- ── PITCH PERFORMANCE ── -->
@@ -1515,6 +1525,7 @@
           </div>
         </div>
       </div>
+      <div class="booking-cta">Need further help? <a onclick="showTab('calendar')" href="#">Book a Free 15-Minute Session</a> or <a onclick="showTab('calendar')" href="#">Get The Full Pitch Coaching Service</a>, here!</div>
     </div>
 
     <!-- ── PITCH 101 RULES ── -->
@@ -1564,6 +1575,7 @@
           <div class="rule-text"><strong>Send the deck before the meeting.</strong> A prepared investor is a better conversation partner. Never walk in cold if you can help it.</div>
         </div>
       </div>
+      <div class="booking-cta">Need further help? <a onclick="showTab('calendar')" href="#">Book a Free 15-Minute Session</a> or <a onclick="showTab('calendar')" href="#">Get The Full Pitch Coaching Service</a>, here!</div>
     </div>
 
     <!-- ── PITCH DECK BASICS ── -->
@@ -1679,6 +1691,7 @@
           📐 <strong style="color:var(--accent-dark);">Design rule:</strong> Dark background, large fonts (min 24pt), no more than 30 words per slide. If it takes more than 3 seconds to understand a slide, simplify it.
         </div>
       </div>
+      <div class="booking-cta">Need further help? <a onclick="showTab('calendar')" href="#">Book a Free 15-Minute Session</a> or <a onclick="showTab('calendar')" href="#">Get The Full Pitch Coaching Service</a>, here!</div>
       </div><!-- end pitch-deck-real -->
     </div>
 

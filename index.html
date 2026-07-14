@@ -1384,7 +1384,7 @@
     <div id="practice-pitch-build" class="practice-section">
       <div class="practice-card">
         <h3>What is a Pitch?</h3>
-        <p>A pitch is a mini speech that provokes an audience to action via a logically sound value proposition in 60s. It induces the audience directly to the business model.</p>
+        <p>A pitch is a mini speech that provokes an audience to action via a logically sound value converting proposition in 60s. It induces the audience directly to the business model, which is the desired final conversion.</p>
 
         <h3 style="margin-top:24px;">Pitch Mechanics</h3>
         <p><strong style="color:var(--accent-dark);">How to Build a Pitch:</strong></p>
@@ -1393,7 +1393,7 @@
 
         <div class="rule-item">
           <div class="rule-num">1</div>
-          <div class="rule-text"><strong>Why?</strong> — Story-telling/context and problem statement</div>
+          <div class="rule-text"><strong>Why?</strong> — Story-telling/context - Why You?/problem statement</div>
         </div>
         <div class="rule-item">
           <div class="rule-num">2</div>
@@ -1409,6 +1409,7 @@
       <div class="practice-card">
         <h3>Pitch Template</h3>
         <p>Use the fields below to draft your 60-second pitch. Each part maps directly to one of the 3 pitch components. Complete them in order.</p>
+        <button class="btn-sm" style="margin-bottom:16px;" onclick="loadPitchExample()">Load Example ↓</button>
 
         <div class="formula-box" style="font-family:var(--sans);font-size:0.9rem;line-height:2;">
           WHY [your story &amp; problem] → HOW [your solution] → WHAT [who you are &amp; what you offer]
@@ -2016,6 +2017,13 @@
       el.innerHTML = '⚠️ <strong style="color:#e87878;">A few things to refine:</strong><ul style="margin:10px 0 0;padding-left:20px;">' +
         issues.map(i => '<li style="font-size:0.85rem;color:var(--muted);margin-bottom:6px;">' + i + '</li>').join('') + '</ul>';
     }
+  }
+
+  function loadPitchExample() {
+    document.getElementById('pitch-why').value = "Every year, thousands of startups raise funding but plateau within 18 months — not because the idea is wrong, but because founders have no tools to test and rebuild their business concept.";
+    document.getElementById('pitch-how').value = "We use Popper's Corroboration Method to help founders troubleshoot their business concept, building the resilience and insight needed to pivot or rebuild with confidence.";
+    document.getElementById('pitch-what').value = "We are PythiaVox — an innovation agency that de-risks startups through structured trial and error programs, because ventures must thrive.";
+    buildPitch();
   }
 
   function checkVP1() {

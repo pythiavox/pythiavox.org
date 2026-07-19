@@ -1160,15 +1160,17 @@
     </div>
     <div style="max-width:860px;margin:0 auto;">
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
-        <div style="flex:1;min-width:220px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;">
+        <div onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})" style="flex:1;min-width:220px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;cursor:pointer;transition:border-color 0.2s,transform 0.15s;" onmouseover="this.style.borderColor='#c8c8c8';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
           <div style="font-family:var(--sans);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Free Session</div>
           <div style="font-family:var(--sans);font-size:1.1rem;font-weight:700;color:var(--accent-dark);margin-bottom:4px;">15 Minutes</div>
           <div style="font-family:var(--sans);font-size:0.83rem;color:var(--muted);line-height:1.6;">A quick intro call to assess your needs and see how PythiaVox can help you.</div>
+          <div style="margin-top:14px;font-family:var(--sans);font-size:0.75rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent-dark);border-top:1px solid var(--border);padding-top:12px;">Book Now ↓</div>
         </div>
         <div style="flex:1;min-width:220px;background:var(--surface);border:1px solid #c87533;border-radius:10px;padding:18px 22px;">
           <div style="font-family:var(--sans);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c87533;margin-bottom:6px;">Full Coaching</div>
           <div style="font-family:var(--sans);font-size:1.1rem;font-weight:700;color:var(--accent-dark);margin-bottom:4px;">60 Minutes</div>
           <div style="font-family:var(--sans);font-size:0.83rem;color:var(--muted);line-height:1.6;">A full pitch coaching session — value proposition, pitch script, delivery, and feedback.</div>
+          <div onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})" style="margin-top:14px;font-family:var(--sans);font-size:0.75rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#c87533;border-top:1px solid rgba(200,117,51,0.3);padding-top:12px;cursor:pointer;">Book Now ↓</div>
           <div style="margin-top:12px;font-family:var(--sans);font-size:0.78rem;color:var(--muted);">Payment due 24 hrs before your session:</div>
           <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
             <a href="https://cash.app/$MortemDeiPriestess" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#00d632;color:#000;font-family:var(--sans);font-size:0.75rem;font-weight:700;padding:6px 12px;border-radius:6px;text-decoration:none;">
@@ -1182,7 +1184,7 @@
           </div>
         </div>
       </div>
-      <iframe src="https://form.jotform.com/261796301232049" style="width:100%;min-height:700px;border:none;border-radius:10px;" scrolling="yes" allowtransparency="true"></iframe>
+      <iframe id="booking-form" src="https://form.jotform.com/261796301232049" style="width:100%;min-height:700px;border:none;border-radius:10px;" scrolling="yes" allowtransparency="true"></iframe>
       <p style="margin-top:16px;font-family:var(--sans);font-size:0.82rem;color:var(--muted);text-align:center;">For evening appointments, email <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">rhoda@pythiavox.org</a></p>
     </div>
   </section>

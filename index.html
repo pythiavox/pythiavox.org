@@ -1413,6 +1413,15 @@
       <p>Practical frameworks to sharpen your venture skills — from crafting your value proposition to delivering an authentic pitch.</p>
     </div>
 
+    <!-- QR code — links directly to Practice tab -->
+    <div style="display:flex;justify-content:center;margin-bottom:28px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 24px;text-align:center;max-width:200px;">
+        <div style="font-family:var(--sans);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Scan to Share</div>
+        <div id="practice-qr" style="display:flex;justify-content:center;align-items:center;"></div>
+        <div style="font-family:var(--sans);font-size:0.68rem;color:var(--muted);margin-top:10px;line-height:1.5;">pythiavox.org<br/>#practice</div>
+      </div>
+    </div>
+
     <div class="practice-pills">
       <button class="practice-pill active" onclick="showPractice('vp')">Value Proposition</button>
       <button class="practice-pill" onclick="showPractice('pitch-build')">Build Your Pitch</button>
@@ -2540,6 +2549,14 @@
     text: 'https://www.jotform.com/app/261430591182150',
     width: 120,
     height: 120,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  new QRCode(document.getElementById('practice-qr'), {
+    text: 'https://pythiavox.org/#practice',
+    width: 130,
+    height: 130,
     colorDark: '#000000',
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.H

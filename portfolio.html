@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PythiaVox — Business Portfolio</title>
+<meta name="description" content="PythiaVox is an innovation agency that de-risks startups through structured trial and error. Philosophy, framework, capabilities and concept studies.">
+<style>
+  :root {
+    --bg: #000;
+    --surface: #14100b;
+    --border: #5c4220;
+    --text: #f5b81c;
+    --muted: #d6bb7c;
+    --accent: #f5b81c;
+    --crimson: #f5b81c;
+    --crimson-deep: #000;
+    --font: Georgia, 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max: 980px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.65; font-size: 18px; }
+  a { color: var(--accent); }
+  header.top { position: sticky; top: 0; z-index: 10; background: var(--crimson-deep); border-bottom: 1px solid var(--border); }
+  header.top .in { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; letter-spacing: .06em; text-decoration: none; color: var(--text); }
+  nav a { font-family: var(--sans); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; margin-left: 16px; }
+  nav a:hover { color: #fff; }
+  section { max-width: var(--max); margin: 0 auto; padding: 88px 24px 24px; }
+  .eyebrow { font-family: var(--sans); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; font-weight: 400; max-width: 16em; }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 400; line-height: 1.2; margin-bottom: 28px; }
+  h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  p { margin-bottom: 16px; max-width: 42em; }
+  .lede { font-size: 1.25rem; color: var(--text); }
+  .cover { padding-top: 120px; padding-bottom: 40px; }
+  .cover .sub { margin-top: 28px; }
+  hr { border: 0; border-top: 1px solid var(--border); max-width: var(--max); margin: 64px auto 0; }
+  .label { font-family: var(--sans); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; display: block; }
+  .thesis { border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; font-size: 1.35rem; max-width: 30em; margin: 24px 0 36px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+  .card p { font-size: .95rem; margin-bottom: 0; color: var(--muted); }
+  .num { font-family: var(--sans); font-size: .75rem; color: var(--accent); letter-spacing: .1em; }
+  .stat { font-size: 2.6rem; line-height: 1; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 8px 0 24px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+  th { font-family: var(--sans); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  td { color: var(--muted); }
+  td:first-child { color: var(--text); font-weight: 700; }
+  .scroll { overflow-x: auto; }
+  .formula { font-family: 'SF Mono', Menlo, monospace; font-size: .95rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; display: inline-block; margin-bottom: 20px; max-width: 100%; overflow-x: auto; }
+  svg { width: 100%; height: auto; display: block; margin: 12px 0 28px; }
+  svg text { font-family: var(--sans); fill: var(--text); }
+  .study { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px; }
+  .study .tag { font-family: var(--sans); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); border-radius: 99px; padding: 3px 10px; display: inline-block; margin-bottom: 14px; }
+  .steps { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-top: 18px; }
+  .steps p { font-size: .93rem; color: var(--muted); margin-bottom: 0; }
+  .note { font-family: var(--sans); font-size: .8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; margin-top: 22px; max-width: none; }
+  .cta { background: var(--crimson-deep); border: 1px solid var(--border); border-radius: 8px; padding: 40px 32px; margin-top: 8px; }
+  .btn { display: inline-block; font-family: var(--sans); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; background: var(--accent); color: #000; text-decoration: none; padding: 12px 22px; border-radius: 6px; font-weight: 700; margin-top: 8px; }
+  footer { max-width: var(--max); margin: 0 auto; padding: 48px 24px 64px; font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+  @media (max-width: 640px) { body { font-size: 17px; } nav { display: none; } section { padding-top: 64px; } .study { padding: 20px; } }
+  @media print {
+    body { background: #fff; color: #111; font-size: 11pt; }
+    header.top, nav { display: none; }
+    .card, .study, .formula, .cta { background: #fff; border-color: #999; color: #111; }
+    p, td, .card p, .steps p, .lede { color: #222; }
+    a { color: #111; } svg text { fill: #111; }
+    section { padding-top: 32px; break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="in">
+  <a class="brand" href="#top">PYTHIAVOX</a>
+  <nav>
+    <a href="#philosophy">Philosophy</a><a href="#vision">Vision</a><a href="#framework">Framework</a><a href="#capabilities">Capabilities</a><a href="#studies">Studies</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<section class="cover" id="top">
+  <div class="eyebrow">Business Portfolio · 2026</div>
+  <h1>Ventures don't fail from lack of ambition. They fail from untested assumptions.</h1>
+  <p class="lede sub">PythiaVox is an innovation agency that de-risks startups through financial, analytical and educational programs, building resilience through structured trial and error.</p>
+  <p class="lede">Founded and led by Rhoda Serafim, a 5-time founder with ten years across hubs on three continents.</p>
+</section>
+
+<!-- 1 PHILOSOPHY -->
+<hr>
+<section id="philosophy">
+  <div class="eyebrow">01 · Philosophy</div>
+  <h2>The industry thesis</h2>
+
+  <span class="label">The friction</span>
+  <p>Startup support is built around the pitch and the funding round. Founders are coached to sound certain long before they have tested anything. The result: <strong>90% of startups fail, and 75% of funded ventures fail</strong>, often because the first real stress test arrives after the money is spent.</p>
+
+  <span class="label">Our thesis</span>
+  <div class="thesis">Resilience is not a personality trait. It is the product of failing small, early and on purpose, and learning something true each time.</div>
+
+  <span class="label">Non-negotiable principles</span>
+  <div class="grid">
+    <div class="card"><span class="num">01</span><h3>Test before you tell</h3><p>No claim goes into a pitch, model or deck until it has survived a deliberate attempt to break it.</p></div>
+    <div class="card"><span class="num">02</span><h3>The problem is half the solution</h3><p>A solution is a derivative of its problem. If the problem is vague, no amount of polish rescues the answer.</p></div>
+    <div class="card"><span class="num">03</span><h3>Teach the method, not the answer</h3><p>Success means founders can run the process without us. Dependency is a failure mode.</p></div>
+    <div class="card"><span class="num">04</span><h3>Truth over comfort</h3><p>We present unvarnished findings, including when they say pivot, pause or stop.</p></div>
+    <div class="card"><span class="num">05</span><h3>Stay local, think global</h3><p>Ventures are scaled across borders but grounded in the ecosystems that raised them.</p></div>
+  </div>
+</section>
+
+<!-- 2 VISION -->
+<hr>
+<section id="vision">
+  <div class="eyebrow">02 · Vision &amp; Mission</div>
+  <h2>Where we're going, and how</h2>
+  <div class="grid">
+    <div class="card"><span class="label">Vision</span><p style="font-size:1.05rem;color:var(--text)">An ecosystem where founders expect to stress-test their ventures, and where capital flows to companies that have already survived the questions that kill most of them.</p></div>
+    <div class="card"><span class="label">Mission</span><p style="font-size:1.05rem;color:var(--text)">We de-risk early-stage ventures for founders and the investors who back them through structured trial-and-error programs spanning concept, model, pitch, finance and partnerships.</p></div>
+  </div>
+  <h3 style="margin-top:36px">Values in practice</h3>
+  <div class="scroll"><table>
+    <tr><th>Value</th><th>What it looks like in a session</th></tr>
+    <tr><td>Rigor</td><td>We write the value proposition as a formula and check every term. Vague language is sent back.</td></tr>
+    <tr><td>Candor</td><td>Feedback is specific and given live. If a number doesn't hold up, we say so in the room.</td></tr>
+    <tr><td>Resilience</td><td>Failure is examined, not hidden. Our own interview series asks founders to unpack one defining fail.</td></tr>
+    <tr><td>Craft</td><td>Scripts are rewritten until they are sharp, clear and authentic, then rehearsed aloud.</td></tr>
+    <tr><td>Generosity</td><td>We publish our practical frameworks openly and offer a free first session.</td></tr>
+  </table></div>
+</section>
+
+<!-- 3 FRAMEWORK -->
+<hr>
+<section id="framework">
+  <div class="eyebrow">03 · Signature Framework</div>
+  <h2>The Trial · Error · Truth Method</h2>
+  <p class="lede">Our process, first run live as a four-hour "Hack Your Own Venture" intensive at Boston Tech Week, 2026, takes a venture through four phases. Each phase ends with an artifact and a decision.</p>
+
+  <svg viewBox="0 0 900 150" role="img" aria-label="Four-phase flow: Diagnose, Architect, Stress-test, Govern, with a loop back from Stress-test to Architect">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f5b81c"/></marker></defs>
+    <g fill="#14100b" stroke="#5c4220">
+      <rect x="10" y="20" width="190" height="70" rx="8"/><rect x="240" y="20" width="190" height="70" rx="8"/>
+      <rect x="470" y="20" width="190" height="70" rx="8"/><rect x="700" y="20" width="190" height="70" rx="8"/>
+    </g>
+    <g font-size="15" text-anchor="middle">
+      <text x="105" y="50" fill="#f5b81c" font-size="12">PHASE 1</text><text x="105" y="73" font-weight="700">Diagnose</text>
+      <text x="335" y="50" fill="#f5b81c" font-size="12">PHASE 2</text><text x="335" y="73" font-weight="700">Architect</text>
+      <text x="565" y="50" fill="#f5b81c" font-size="12">PHASE 3</text><text x="565" y="73" font-weight="700">Stress-test</text>
+      <text x="795" y="50" fill="#f5b81c" font-size="12">PHASE 4</text><text x="795" y="73" font-weight="700">Govern</text>
+    </g>
+    <g stroke="#f5b81c" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M200 55H238"/><path d="M430 55H468"/><path d="M660 55H698"/>
+      <path d="M565 90V125H335V92" stroke-dasharray="5 4"/>
+    </g>
+    <text x="450" y="143" font-size="12" text-anchor="middle" fill="#f5b81c" style="fill:#f5b81c">Failed assumption → return to Architect</text>
+  </svg>
+
+  <div class="scroll"><table>
+    <tr><th>Phase</th><th>Key question</th><th>What we do</th><th>Artifact</th></tr>
+    <tr><td>1 · Diagnose</td><td>What is actually true today?</td><td>Surface constraints and root causes. Locate gaps in product-market fit and go-to-market. State the problem concisely.</td><td>Problem statement; assumption register</td></tr>
+    <tr><td>2 · Architect</td><td>What must hold for this to work?</td><td>Derive the solution from the problem. Build the value proposition as VP = f(P, S, A, ROI). Shape the business model around it.</td><td>Value proposition; business model blueprint</td></tr>
+    <tr><td>3 · Stress-test</td><td>What breaks first?</td><td>Run conversion tests on the value proposition and model. Pitch under pressure. Rewrite until each claim survives.</td><td>Test results; revised pitch script; pivot / persevere call</td></tr>
+    <tr><td>4 · Govern</td><td>How does this stay true?</td><td>Install review cadence, metrics and partnership structure. Hand the method to the founding team.</td><td>Operating cadence; partnership map; hand-off playbook</td></tr>
+  </table></div>
+
+  <h3>The core instrument: the value proposition formula</h3>
+  <div class="formula">VP = Conversion → [ (Problem × Solution) → Advantage ] → ROI</div>
+  <p>A clear problem combined with an effective solution creates an advantage, which drives conversion, which results in ROI. The formula turns a vague slogan into a chain of claims that can each be tested. See the free working templates on the <a href="index.html">PythiaVox practice page</a>.</p>
+</section>
+
+<!-- 4 CAPABILITIES -->
+<hr>
+<section id="capabilities">
+  <div class="eyebrow">04 · Capabilities</div>
+  <h2>What we build, and what you keep</h2>
+  <div class="scroll"><table>
+    <tr><th>Capability</th><th>Problem it addresses</th><th>Scope</th><th>Artifacts</th></tr>
+    <tr><td>Venture Resilience &amp; Pivot Engineering</td><td>Founders are stuck: traction stalled, direction unclear.</td><td>PMF and GTM diagnosis, assumption stress-testing, pivot support</td><td>Gap analysis; pivot decision memo</td></tr>
+    <tr><td>Value &amp; Model Architecture</td><td>The story and the business model don't connect.</td><td>Value proposition build, conversion testing, business model design</td><td>Value proposition; tested model</td></tr>
+    <tr><td>Pitch Systems &amp; Performance</td><td>Strong ideas lose the room.</td><td>Script writing, delivery coaching, live feedback, deck basics</td><td>60-second script; pitch deck; rehearsal recording</td></tr>
+    <tr><td>Intangible-Economy Finance Education</td><td>Teams can't read or defend their numbers.</td><td>Financial literacy for intangible-asset businesses</td><td>Financial model; numbers one-pager</td></tr>
+    <tr><td>Partnership &amp; Business Development</td><td>Growth depends on relationships no one has designed.</td><td>Bootstrapped long-term partnerships, C-suite negotiation, company-building fundamentals</td><td>Partnership map; BD playbook</td></tr>
+    <tr><td>Founder Leadership Development</td><td>The founder is the bottleneck.</td><td>High-performance leadership programs, business coaching</td><td>Leadership plan; coaching log</td></tr>
+  </table></div>
+
+  <h3>Engagement models</h3>
+  <div class="grid">
+    <div class="card"><h3>Discovery Session</h3><p>Free 30-minute intro call to assess fit and identify the single most urgent constraint.</p></div>
+    <div class="card"><h3>Intensive</h3><p>A fixed-scope, one-hour deep dive or multi-hour workshop such as Hack Your Own Venture.</p></div>
+    <div class="card"><h3>Program</h3><p>A structured multi-session de-risking program from the PythiaVox curriculum.</p></div>
+    <div class="card"><h3>Event &amp; Panel</h3><p>Workshops, judging, interviews and hackathons for accelerators, universities and ecosystem partners.</p></div>
+  </div>
+</section>
+
+<!-- 5 STUDIES -->
+<hr>
+<section id="studies">
+  <div class="eyebrow">05 · Concept Studies</div>
+  <h2>How we think, shown on problems we haven't been hired for</h2>
+  <p>These are illustrative studies applying the method to realistic scenarios. They are labelled as concept work and contain no client data.</p>
+
+  <article class="study">
+    <span class="tag">Concept study · Scenario</span>
+    <h3>The funded startup that cannot explain why customers convert</h3>
+    <div class="steps">
+      <div><span class="label">Context &amp; challenge</span><p>A seed-funded B2B software company has an MVP and early users, but growth has plateaued. The team describes its value in features, and each sales conversation is pitched differently.</p></div>
+      <div><span class="label">Strategic diagnosis</span><p>The problem statement is broad ("teams waste time"), so the solution has nothing to derive from. No advantage is defined, so conversion cannot be measured against it.</p></div>
+      <div><span class="label">Proposed framework</span><p>Diagnose: narrow P to one customer and one costly task. Architect: derive S and A, then write VP = f(P, S, A, ROI). Stress-test: run the VP through ten buyer conversations. Govern: monthly review of conversion by claim.</p></div>
+      <div><span class="label">Expected impact (hypotheses)</span><p>A single testable value proposition, a consistent pitch, and a clear view of which claim drives conversion. Success measure: improved conversion in the segment tested.</p></div>
+    </div>
+  </article>
+
+  <article class="study">
+    <span class="tag">Concept study · Industry teardown</span>
+    <h3>Why university tech-transfer programs stall between lab and market</h3>
+    <div class="steps">
+      <div><span class="label">Context &amp; challenge</span><p>Programs such as university commercialization grants fund promising research, but many lab breakthroughs never become products. Researchers are expert in the science and new to market testing.</p></div>
+      <div><span class="label">Strategic diagnosis</span><p>Funding is released before the commercial problem is stated. Mentorship is delivered as advice rather than as tests the project must pass.</p></div>
+      <div><span class="label">Proposed framework</span><p>Add a Diagnose gate before funding tranches, a stress-test milestone with external buyers, and a governance hand-off so the research team runs the method itself.</p></div>
+      <div><span class="label">Expected impact (hypotheses)</span><p>Fewer stalled projects, earlier kill-or-pivot decisions, and funding tied to evidence. To be validated against a program's own outcome data.</p></div>
+    </div>
+  </article>
+
+  <article class="study">
+    <span class="tag">Applied work · Live format</span>
+    <h3>The Founder Fail: Let's Make Lemonade</h3>
+    <div class="steps">
+      <div><span class="label">Context &amp; challenge</span><p>Failure is the most valuable and least shared data in the ecosystem.</p></div>
+      <div><span class="label">Strategic diagnosis</span><p>Open-ended storytelling drifts. A tight frame, one fail and one lesson, produces insight.</p></div>
+      <div><span class="label">Format</span><p>A 10–12 minute one-on-one interview with an experienced founder about one defining fail. Presented at Boston Tech Week with Ben Katz, CEO of HYBRD and Y Combinator alum.</p></div>
+      <div><span class="label">Outcome</span><p>A repeatable series that turns failure into shared, usable learning for the founders listening.</p></div>
+    </div>
+  </article>
+
+  <h3 style="margin-top:36px">Field record</h3>
+  <p>Beyond studies, the method has been exercised in public: <strong>Hack Your Own Venture</strong> (Boston Tech Week, May 2026), <strong>judging at BU Questrom</strong> and the <strong>Innovators Night</strong> finale (April 2026), <strong>Ignition Awards</strong> at Boston University (February 2026), and the <strong>Hudson Valley Open Data Hackathon</strong> (April 2026). Recaps are on the <a href="index.html">main site</a>.</p>
+</section>
+
+<!-- CTA -->
+<hr>
+<section id="contact">
+  <div class="cta">
+    <div class="eyebrow">Work with us</div>
+    <h2 style="margin-bottom:16px">Bring us one assumption you're afraid to test.</h2>
+    <p>If you're a founder with an MVP and a feeling that something isn't converting, or an accelerator, university or fund that wants more resilient ventures, start with a free 30-minute session. Tell us the constraint. We'll tell you how we'd test it.</p>
+    <a class="btn" href="mailto:rhoda@pythiavox.org?subject=PythiaVox%20discovery%20session">Book a free session</a>
+  </div>
+</section>
+
+<footer>
+  PythiaVox · Rhoda Serafim, Founder &amp; Chief Business Coach · rhoda@pythiavox.org · <a href="index.html">pythiavox.org</a>
+</footer>
+
+</body>
+</html>

@@ -38,7 +38,7 @@
     }
 
     /* Alternating lemon background on even tabs */
-    #tab-practice, #tab-programs, #tab-events, #tab-progress {
+    #tab-practice, #tab-programs, #tab-events, #tab-progress, #tab-papers {
       background: #000;
       margin: -48px -24px;
       padding: 48px 24px;
@@ -60,6 +60,13 @@
       padding: 24px 28px;
     }
     #tab-podcast .about-intro { margin-bottom: 24px; }
+
+    /* Home: soft laurel branches curving up both edges (home page only) */
+    .home-laurel-wrap { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .home-laurel { position: absolute; top: 0; height: 100vh; width: auto; aspect-ratio: 1 / 3; opacity: 0.16; }
+    .home-laurel.left { left: -4vh; }
+    .home-laurel.right { right: -4vh; transform: scaleX(-1); }
+    @media (max-width: 700px) { .home-laurel { opacity: 0.1; } .home-laurel.left { left: -14vh; } .home-laurel.right { right: -14vh; } }
 
     /* ── HEADER ── */
     header {
@@ -1104,6 +1111,7 @@
       <button onclick="showTab('programs')" data-tab="programs">De-Risking Programs</button>
       <button onclick="showTab('practice')" data-tab="practice">Practice</button>
       <button onclick="showTab('podcast')" data-tab="podcast">Podcast</button>
+      <button onclick="showTab('papers')" data-tab="papers">Papers &amp; Articles</button>
       <button onclick="showTab('progress')" data-tab="progress">Progress</button>
       <button onclick="showTab('glossary')" data-tab="glossary">Glossary</button>
     </nav>
@@ -1114,6 +1122,7 @@
 
   <!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
   <section id="tab-home" class="tab-panel active">
+    <div class="home-laurel-wrap" aria-hidden="true"><svg width="0" height="0" style="position:absolute"><defs><filter id="laurel-soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.9"/></filter></defs></svg><svg class="home-laurel left" viewBox="0 0 300 900" aria-hidden="true" focusable="false"><g fill="none" stroke="#f5b81c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#laurel-soft)"><path d="M209.5,880.0 L211.7,875.7 L213.8,871.4 L215.8,867.1 L217.7,862.8 L219.5,858.5 L221.2,854.2 L222.8,849.9 L224.3,845.6 L225.7,841.3 L227.1,837.0 L228.2,832.7 L229.3,828.4 L230.3,824.1 L231.1,819.8 L231.9,815.5 L232.5,811.2 L233.0,806.9 L233.4,802.6 L233.6,798.3 L233.7,794.0 L233.7,789.7 L233.6,785.4 L233.4,781.1 L233.0,776.8 L232.5,772.5 L231.9,768.2 L231.2,763.9 L230.4,759.6 L229.4,755.3 L228.3,751.0 L227.1,746.7 L225.8,742.4 L224.4,738.1 L222.9,733.8 L221.3,729.5 L219.6,725.2 L217.8,720.9 L215.8,716.6 L213.8,712.3 L211.7,708.0 L209.6,703.7 L207.3,699.4 L205.0,695.1 L202.6,690.8 L200.1,686.5 L197.5,682.2 L194.9,677.9 L192.3,673.6 L189.6,669.3 L186.8,665.0 L184.0,660.7 L181.2,656.4 L178.3,652.1 L175.4,647.8 L172.5,643.5 L169.6,639.2 L166.6,634.9 L163.7,630.6 L160.7,626.3 L157.8,622.0 L154.9,617.7 L151.9,613.4 L149.0,609.1 L146.1,604.8 L143.3,600.5 L140.4,596.2 L137.6,591.9 L134.9,587.6 L132.2,583.3 L129.5,579.0 L126.9,574.7 L124.4,570.4 L121.9,566.1 L119.5,561.8 L117.2,557.5 L114.9,553.2 L112.7,548.9 L110.6,544.6 L108.6,540.3 L106.6,536.0 L104.8,531.7 L103.0,527.4 L101.3,523.1 L99.8,518.8 L98.3,514.5 L97.0,510.2 L95.7,505.9 L94.5,501.6 L93.5,497.3 L92.6,493.0 L91.7,488.7 L91.0,484.4 L90.4,480.1 L89.9,475.8 L89.5,471.5 L89.3,467.2 L89.1,462.9 L89.0,458.6 L89.1,454.3 L89.3,450.0 L89.5,445.7 L89.9,441.4 L90.4,437.1 L91.0,432.8 L91.7,428.5 L92.5,424.2 L93.4,419.9 L94.4,415.6 L95.4,411.3 L96.6,407.0 L97.9,402.7 L99.2,398.4 L100.7,394.1 L102.2,389.8 L103.8,385.5 L105.4,381.2 L107.1,376.9 L108.9,372.6 L110.8,368.3 L112.7,364.0 L114.7,359.7 L116.7,355.4 L118.8,351.1 L120.9,346.8 L123.0,342.5 L125.2,338.2 L127.4,333.9 L129.6,329.6 L131.8,325.3 L134.1,321.0 L136.4,316.7 L138.6,312.4 L140.9,308.1 L143.2,303.8 L145.5,299.5 L147.7,295.2 L150.0,290.9 L152.2,286.6 L154.4,282.3 L156.5,278.0 L158.7,273.7 L160.8,269.4 L162.8,265.1 L164.8,260.8 L166.8,256.5 L168.7,252.2 L170.5,247.9 L172.3,243.6 L174.0,239.3 L175.7,235.0 L177.3,230.7 L178.8,226.4 L180.2,222.1 L181.6,217.8 L182.9,213.5 L184.1,209.2 L185.2,204.9 L186.2,200.6 L187.1,196.3 L188.0,192.0 L188.7,187.7 L189.4,183.4 L189.9,179.1 L190.4,174.8 L190.8,170.5 L191.0,166.2 L191.2,161.9 L191.2,157.6 L191.2,153.3 L191.1,149.0 L190.8,144.7 L190.5,140.4 L190.1,136.1 L189.5,131.8 L188.9,127.5 L188.2,123.2 L187.4,118.9 L186.5,114.6 L185.5,110.3 L184.4,106.0 L183.2,101.7 L181.9,97.4 L180.6,93.1 L179.2,88.8 L177.7,84.5 L176.1,80.2 L174.4,75.9 L172.7,71.6 L170.9,67.3 L169.0,63.0 L167.1,58.7 L165.1,54.4 L163.1,50.1 L161.0,45.8 L158.9,41.5 L156.7,37.2 L154.5,32.9 L152.2,28.6 L149.9,24.3 L147.6,20.0" /><g transform="translate(225.9,840.9) rotate(-39.4)"><path d="M0,0 Q43.1,-18.9 86.1,0 Q43.1,18.9 0,0Z"/><path d="M3,0 L73.2,0" stroke-width="0.8"/></g><g transform="translate(233.4,801.8) rotate(-119.8)"><path d="M0,0 Q45.6,-20.1 91.1,0 Q45.6,20.1 0,0Z"/><path d="M3,0 L77.5,0" stroke-width="0.8"/></g><path d="M233.4,801.8 Q221.8,795.2 202.1,788.5"/><ellipse cx="202.1" cy="788.5" rx="4" ry="6" transform="rotate(-67 202.1 788.5)"/><g transform="translate(231.0,762.7) rotate(-65.1)"><path d="M0,0 Q43.0,-18.9 86.1,0 Q43.0,18.9 0,0Z"/><path d="M3,0 L73.2,0" stroke-width="0.8"/></g><g transform="translate(231.0,762.7) rotate(-138.2)"><path d="M0,0 Q30.1,-13.3 60.3,0 Q30.1,13.3 0,0Z"/><path d="M3,0 L51.2,0" stroke-width="0.8"/></g><g transform="translate(218.9,723.6) rotate(-145.8)"><path d="M0,0 Q41.5,-18.3 83.0,0 Q41.5,18.3 0,0Z"/><path d="M3,0 L70.6,0" stroke-width="0.8"/></g><g transform="translate(198.9,684.5) rotate(-88.0)"><path d="M0,0 Q39.5,-17.4 79.1,0 Q39.5,17.4 0,0Z"/><path d="M3,0 L67.2,0" stroke-width="0.8"/></g><g transform="translate(173.8,645.5) rotate(-161.3)"><path d="M0,0 Q34.9,-15.4 69.8,0 Q34.9,15.4 0,0Z"/><path d="M3,0 L59.3,0" stroke-width="0.8"/></g><g transform="translate(173.8,645.5) rotate(-78.3)"><path d="M0,0 Q24.4,-10.8 48.9,0 Q24.4,10.8 0,0Z"/><path d="M3,0 L41.5,0" stroke-width="0.8"/></g><path d="M173.8,645.5 Q161.4,649.6 140.9,653.8"/><ellipse cx="140.9" cy="653.8" rx="4" ry="6" transform="rotate(-104 140.9 653.8)"/><g transform="translate(147.2,606.4) rotate(-89.1)"><path d="M0,0 Q34.1,-15.0 68.3,0 Q34.1,15.0 0,0Z"/><path d="M3,0 L58.0,0" stroke-width="0.8"/></g><g transform="translate(122.6,567.3) rotate(-162.9)"><path d="M0,0 Q37.8,-16.6 75.5,0 Q37.8,16.6 0,0Z"/><path d="M3,0 L64.2,0" stroke-width="0.8"/></g><g transform="translate(103.3,528.2) rotate(-74.6)"><path d="M0,0 Q36.0,-15.9 72.1,0 Q36.0,15.9 0,0Z"/><path d="M3,0 L61.3,0" stroke-width="0.8"/></g><g transform="translate(103.3,528.2) rotate(-159.0)"><path d="M0,0 Q25.2,-11.1 50.5,0 Q25.2,11.1 0,0Z"/><path d="M3,0 L42.9,0" stroke-width="0.8"/></g><g transform="translate(91.8,489.1) rotate(-141.9)"><path d="M0,0 Q30.2,-13.3 60.3,0 Q30.2,13.3 0,0Z"/><path d="M3,0 L51.3,0" stroke-width="0.8"/></g><path d="M91.8,489.1 Q79.1,486.0 58.4,483.0"/><ellipse cx="58.4" cy="483.0" rx="4" ry="6" transform="rotate(-80 58.4 483.0)"/><g transform="translate(89.3,450.0) rotate(-52.6)"><path d="M0,0 Q31.1,-13.7 62.3,0 Q31.1,13.7 0,0Z"/><path d="M3,0 L52.9,0" stroke-width="0.8"/></g><g transform="translate(95.5,410.9) rotate(-110.3)"><path d="M0,0 Q28.6,-12.6 57.2,0 Q28.6,12.6 0,0Z"/><path d="M3,0 L48.6,0" stroke-width="0.8"/></g><g transform="translate(95.5,410.9) rotate(-28.8)"><path d="M0,0 Q20.0,-8.8 40.0,0 Q20.0,8.8 0,0Z"/><path d="M3,0 L34.0,0" stroke-width="0.8"/></g><g transform="translate(109.3,371.8) rotate(-27.6)"><path d="M0,0 Q28.0,-12.3 55.9,0 Q28.0,12.3 0,0Z"/><path d="M3,0 L47.6,0" stroke-width="0.8"/></g><g transform="translate(128.0,332.7) rotate(-99.0)"><path d="M0,0 Q30.3,-13.3 60.6,0 Q30.3,13.3 0,0Z"/><path d="M3,0 L51.5,0" stroke-width="0.8"/></g><path d="M128.0,332.7 Q120.5,320.2 105.0,307.7"/><ellipse cx="105.0" cy="307.7" rx="4" ry="6" transform="rotate(-43 105.0 307.7)"/><g transform="translate(148.5,293.6) rotate(-29.8)"><path d="M0,0 Q28.4,-12.5 56.7,0 Q28.4,12.5 0,0Z"/><path d="M3,0 L48.2,0" stroke-width="0.8"/></g><g transform="translate(148.5,293.6) rotate(-99.3)"><path d="M0,0 Q19.9,-8.7 39.7,0 Q19.9,8.7 0,0Z"/><path d="M3,0 L33.8,0" stroke-width="0.8"/></g><g transform="translate(167.6,254.5) rotate(-106.6)"><path d="M0,0 Q24.8,-10.9 49.6,0 Q24.8,10.9 0,0Z"/><path d="M3,0 L42.1,0" stroke-width="0.8"/></g><g transform="translate(182.3,215.5) rotate(-38.2)"><path d="M0,0 Q25.1,-11.1 50.2,0 Q25.1,11.1 0,0Z"/><path d="M3,0 L42.7,0" stroke-width="0.8"/></g><g transform="translate(190.2,176.4) rotate(-122.2)"><path d="M0,0 Q24.9,-11.0 49.8,0 Q24.9,11.0 0,0Z"/><path d="M3,0 L42.3,0" stroke-width="0.8"/></g><g transform="translate(190.2,176.4) rotate(-45.1)"><path d="M0,0 Q17.4,-7.7 34.9,0 Q17.4,7.7 0,0Z"/><path d="M3,0 L29.6,0" stroke-width="0.8"/></g><path d="M190.2,176.4 Q178.9,169.1 159.5,161.8"/><ellipse cx="159.5" cy="161.8" rx="4" ry="6" transform="rotate(-65 159.5 161.8)"/><g transform="translate(190.2,137.3) rotate(-56.3)"><path d="M0,0 Q24.9,-11.0 49.8,0 Q24.9,11.0 0,0Z"/><path d="M3,0 L42.3,0" stroke-width="0.8"/></g><g transform="translate(182.2,98.2) rotate(-146.1)"><path d="M0,0 Q20.5,-9.0 41.0,0 Q20.5,9.0 0,0Z"/><path d="M3,0 L34.8,0" stroke-width="0.8"/></g><g transform="translate(167.3,59.1) rotate(-72.2)"><path d="M0,0 Q20.9,-9.2 41.7,0 Q20.9,9.2 0,0Z"/><path d="M3,0 L35.4,0" stroke-width="0.8"/></g><g transform="translate(167.3,59.1) rotate(-159.4)"><path d="M0,0 Q14.6,-6.4 29.2,0 Q14.6,6.4 0,0Z"/><path d="M3,0 L24.8,0" stroke-width="0.8"/></g></g></svg><svg class="home-laurel right" viewBox="0 0 300 900" aria-hidden="true" focusable="false"><g fill="none" stroke="#f5b81c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#laurel-soft)"><path d="M209.5,880.0 L211.7,875.7 L213.8,871.4 L215.8,867.1 L217.7,862.8 L219.5,858.5 L221.2,854.2 L222.8,849.9 L224.3,845.6 L225.7,841.3 L227.1,837.0 L228.2,832.7 L229.3,828.4 L230.3,824.1 L231.1,819.8 L231.9,815.5 L232.5,811.2 L233.0,806.9 L233.4,802.6 L233.6,798.3 L233.7,794.0 L233.7,789.7 L233.6,785.4 L233.4,781.1 L233.0,776.8 L232.5,772.5 L231.9,768.2 L231.2,763.9 L230.4,759.6 L229.4,755.3 L228.3,751.0 L227.1,746.7 L225.8,742.4 L224.4,738.1 L222.9,733.8 L221.3,729.5 L219.6,725.2 L217.8,720.9 L215.8,716.6 L213.8,712.3 L211.7,708.0 L209.6,703.7 L207.3,699.4 L205.0,695.1 L202.6,690.8 L200.1,686.5 L197.5,682.2 L194.9,677.9 L192.3,673.6 L189.6,669.3 L186.8,665.0 L184.0,660.7 L181.2,656.4 L178.3,652.1 L175.4,647.8 L172.5,643.5 L169.6,639.2 L166.6,634.9 L163.7,630.6 L160.7,626.3 L157.8,622.0 L154.9,617.7 L151.9,613.4 L149.0,609.1 L146.1,604.8 L143.3,600.5 L140.4,596.2 L137.6,591.9 L134.9,587.6 L132.2,583.3 L129.5,579.0 L126.9,574.7 L124.4,570.4 L121.9,566.1 L119.5,561.8 L117.2,557.5 L114.9,553.2 L112.7,548.9 L110.6,544.6 L108.6,540.3 L106.6,536.0 L104.8,531.7 L103.0,527.4 L101.3,523.1 L99.8,518.8 L98.3,514.5 L97.0,510.2 L95.7,505.9 L94.5,501.6 L93.5,497.3 L92.6,493.0 L91.7,488.7 L91.0,484.4 L90.4,480.1 L89.9,475.8 L89.5,471.5 L89.3,467.2 L89.1,462.9 L89.0,458.6 L89.1,454.3 L89.3,450.0 L89.5,445.7 L89.9,441.4 L90.4,437.1 L91.0,432.8 L91.7,428.5 L92.5,424.2 L93.4,419.9 L94.4,415.6 L95.4,411.3 L96.6,407.0 L97.9,402.7 L99.2,398.4 L100.7,394.1 L102.2,389.8 L103.8,385.5 L105.4,381.2 L107.1,376.9 L108.9,372.6 L110.8,368.3 L112.7,364.0 L114.7,359.7 L116.7,355.4 L118.8,351.1 L120.9,346.8 L123.0,342.5 L125.2,338.2 L127.4,333.9 L129.6,329.6 L131.8,325.3 L134.1,321.0 L136.4,316.7 L138.6,312.4 L140.9,308.1 L143.2,303.8 L145.5,299.5 L147.7,295.2 L150.0,290.9 L152.2,286.6 L154.4,282.3 L156.5,278.0 L158.7,273.7 L160.8,269.4 L162.8,265.1 L164.8,260.8 L166.8,256.5 L168.7,252.2 L170.5,247.9 L172.3,243.6 L174.0,239.3 L175.7,235.0 L177.3,230.7 L178.8,226.4 L180.2,222.1 L181.6,217.8 L182.9,213.5 L184.1,209.2 L185.2,204.9 L186.2,200.6 L187.1,196.3 L188.0,192.0 L188.7,187.7 L189.4,183.4 L189.9,179.1 L190.4,174.8 L190.8,170.5 L191.0,166.2 L191.2,161.9 L191.2,157.6 L191.2,153.3 L191.1,149.0 L190.8,144.7 L190.5,140.4 L190.1,136.1 L189.5,131.8 L188.9,127.5 L188.2,123.2 L187.4,118.9 L186.5,114.6 L185.5,110.3 L184.4,106.0 L183.2,101.7 L181.9,97.4 L180.6,93.1 L179.2,88.8 L177.7,84.5 L176.1,80.2 L174.4,75.9 L172.7,71.6 L170.9,67.3 L169.0,63.0 L167.1,58.7 L165.1,54.4 L163.1,50.1 L161.0,45.8 L158.9,41.5 L156.7,37.2 L154.5,32.9 L152.2,28.6 L149.9,24.3 L147.6,20.0" /><g transform="translate(225.9,840.9) rotate(-39.4)"><path d="M0,0 Q43.1,-18.9 86.1,0 Q43.1,18.9 0,0Z"/><path d="M3,0 L73.2,0" stroke-width="0.8"/></g><g transform="translate(233.4,801.8) rotate(-119.8)"><path d="M0,0 Q45.6,-20.1 91.1,0 Q45.6,20.1 0,0Z"/><path d="M3,0 L77.5,0" stroke-width="0.8"/></g><path d="M233.4,801.8 Q221.8,795.2 202.1,788.5"/><ellipse cx="202.1" cy="788.5" rx="4" ry="6" transform="rotate(-67 202.1 788.5)"/><g transform="translate(231.0,762.7) rotate(-65.1)"><path d="M0,0 Q43.0,-18.9 86.1,0 Q43.0,18.9 0,0Z"/><path d="M3,0 L73.2,0" stroke-width="0.8"/></g><g transform="translate(231.0,762.7) rotate(-138.2)"><path d="M0,0 Q30.1,-13.3 60.3,0 Q30.1,13.3 0,0Z"/><path d="M3,0 L51.2,0" stroke-width="0.8"/></g><g transform="translate(218.9,723.6) rotate(-145.8)"><path d="M0,0 Q41.5,-18.3 83.0,0 Q41.5,18.3 0,0Z"/><path d="M3,0 L70.6,0" stroke-width="0.8"/></g><g transform="translate(198.9,684.5) rotate(-88.0)"><path d="M0,0 Q39.5,-17.4 79.1,0 Q39.5,17.4 0,0Z"/><path d="M3,0 L67.2,0" stroke-width="0.8"/></g><g transform="translate(173.8,645.5) rotate(-161.3)"><path d="M0,0 Q34.9,-15.4 69.8,0 Q34.9,15.4 0,0Z"/><path d="M3,0 L59.3,0" stroke-width="0.8"/></g><g transform="translate(173.8,645.5) rotate(-78.3)"><path d="M0,0 Q24.4,-10.8 48.9,0 Q24.4,10.8 0,0Z"/><path d="M3,0 L41.5,0" stroke-width="0.8"/></g><path d="M173.8,645.5 Q161.4,649.6 140.9,653.8"/><ellipse cx="140.9" cy="653.8" rx="4" ry="6" transform="rotate(-104 140.9 653.8)"/><g transform="translate(147.2,606.4) rotate(-89.1)"><path d="M0,0 Q34.1,-15.0 68.3,0 Q34.1,15.0 0,0Z"/><path d="M3,0 L58.0,0" stroke-width="0.8"/></g><g transform="translate(122.6,567.3) rotate(-162.9)"><path d="M0,0 Q37.8,-16.6 75.5,0 Q37.8,16.6 0,0Z"/><path d="M3,0 L64.2,0" stroke-width="0.8"/></g><g transform="translate(103.3,528.2) rotate(-74.6)"><path d="M0,0 Q36.0,-15.9 72.1,0 Q36.0,15.9 0,0Z"/><path d="M3,0 L61.3,0" stroke-width="0.8"/></g><g transform="translate(103.3,528.2) rotate(-159.0)"><path d="M0,0 Q25.2,-11.1 50.5,0 Q25.2,11.1 0,0Z"/><path d="M3,0 L42.9,0" stroke-width="0.8"/></g><g transform="translate(91.8,489.1) rotate(-141.9)"><path d="M0,0 Q30.2,-13.3 60.3,0 Q30.2,13.3 0,0Z"/><path d="M3,0 L51.3,0" stroke-width="0.8"/></g><path d="M91.8,489.1 Q79.1,486.0 58.4,483.0"/><ellipse cx="58.4" cy="483.0" rx="4" ry="6" transform="rotate(-80 58.4 483.0)"/><g transform="translate(89.3,450.0) rotate(-52.6)"><path d="M0,0 Q31.1,-13.7 62.3,0 Q31.1,13.7 0,0Z"/><path d="M3,0 L52.9,0" stroke-width="0.8"/></g><g transform="translate(95.5,410.9) rotate(-110.3)"><path d="M0,0 Q28.6,-12.6 57.2,0 Q28.6,12.6 0,0Z"/><path d="M3,0 L48.6,0" stroke-width="0.8"/></g><g transform="translate(95.5,410.9) rotate(-28.8)"><path d="M0,0 Q20.0,-8.8 40.0,0 Q20.0,8.8 0,0Z"/><path d="M3,0 L34.0,0" stroke-width="0.8"/></g><g transform="translate(109.3,371.8) rotate(-27.6)"><path d="M0,0 Q28.0,-12.3 55.9,0 Q28.0,12.3 0,0Z"/><path d="M3,0 L47.6,0" stroke-width="0.8"/></g><g transform="translate(128.0,332.7) rotate(-99.0)"><path d="M0,0 Q30.3,-13.3 60.6,0 Q30.3,13.3 0,0Z"/><path d="M3,0 L51.5,0" stroke-width="0.8"/></g><path d="M128.0,332.7 Q120.5,320.2 105.0,307.7"/><ellipse cx="105.0" cy="307.7" rx="4" ry="6" transform="rotate(-43 105.0 307.7)"/><g transform="translate(148.5,293.6) rotate(-29.8)"><path d="M0,0 Q28.4,-12.5 56.7,0 Q28.4,12.5 0,0Z"/><path d="M3,0 L48.2,0" stroke-width="0.8"/></g><g transform="translate(148.5,293.6) rotate(-99.3)"><path d="M0,0 Q19.9,-8.7 39.7,0 Q19.9,8.7 0,0Z"/><path d="M3,0 L33.8,0" stroke-width="0.8"/></g><g transform="translate(167.6,254.5) rotate(-106.6)"><path d="M0,0 Q24.8,-10.9 49.6,0 Q24.8,10.9 0,0Z"/><path d="M3,0 L42.1,0" stroke-width="0.8"/></g><g transform="translate(182.3,215.5) rotate(-38.2)"><path d="M0,0 Q25.1,-11.1 50.2,0 Q25.1,11.1 0,0Z"/><path d="M3,0 L42.7,0" stroke-width="0.8"/></g><g transform="translate(190.2,176.4) rotate(-122.2)"><path d="M0,0 Q24.9,-11.0 49.8,0 Q24.9,11.0 0,0Z"/><path d="M3,0 L42.3,0" stroke-width="0.8"/></g><g transform="translate(190.2,176.4) rotate(-45.1)"><path d="M0,0 Q17.4,-7.7 34.9,0 Q17.4,7.7 0,0Z"/><path d="M3,0 L29.6,0" stroke-width="0.8"/></g><path d="M190.2,176.4 Q178.9,169.1 159.5,161.8"/><ellipse cx="159.5" cy="161.8" rx="4" ry="6" transform="rotate(-65 159.5 161.8)"/><g transform="translate(190.2,137.3) rotate(-56.3)"><path d="M0,0 Q24.9,-11.0 49.8,0 Q24.9,11.0 0,0Z"/><path d="M3,0 L42.3,0" stroke-width="0.8"/></g><g transform="translate(182.2,98.2) rotate(-146.1)"><path d="M0,0 Q20.5,-9.0 41.0,0 Q20.5,9.0 0,0Z"/><path d="M3,0 L34.8,0" stroke-width="0.8"/></g><g transform="translate(167.3,59.1) rotate(-72.2)"><path d="M0,0 Q20.9,-9.2 41.7,0 Q20.9,9.2 0,0Z"/><path d="M3,0 L35.4,0" stroke-width="0.8"/></g><g transform="translate(167.3,59.1) rotate(-159.4)"><path d="M0,0 Q14.6,-6.4 29.2,0 Q14.6,6.4 0,0Z"/><path d="M3,0 L24.8,0" stroke-width="0.8"/></g></g></svg></div>
 
     <!-- Hero -->
     <div class="home-hero">
@@ -1976,6 +1985,24 @@
   </section>
 
   <!-- ═══════════════════════════════ PROGRESS ══════════════════════════ -->
+  <!-- ═══════════════════════════════ PAPERS & ARTICLES ═════════════════ -->
+  <section id="tab-papers" class="tab-panel">
+    <div class="section-header">
+      <div class="eyebrow">Read &amp; Reference</div>
+      <h2>Papers &amp; Articles</h2>
+      <p>Research notes, frameworks and essays on de-risking ventures, value propositions, pitching and resilience.</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;" id="papers-filters">
+      <button class="practice-pill active" data-filter="all" onclick="filterPapers('all')">All</button>
+      <button class="practice-pill" data-filter="Paper" onclick="filterPapers('Paper')">Papers</button>
+      <button class="practice-pill" data-filter="Article" onclick="filterPapers('Article')">Articles</button>
+    </div>
+    <div class="card-grid" id="papers-list"></div>
+    <p style="text-align:center;margin-top:36px;color:var(--muted);font-family:var(--sans);font-size:0.85rem;">
+      More publications coming soon. Want to collaborate or contribute? <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">Get in touch</a>.
+    </p>
+  </section>
+
   <section id="tab-progress" class="tab-panel">
     <div class="section-header">
       <div class="eyebrow">Your Work</div>
@@ -2007,7 +2034,7 @@
 
 <script>
   // ── TAB SWITCHING ──
-  const VALID_TABS = ['home','calendar','events','programs','practice','podcast','progress','glossary'];
+  const VALID_TABS = ['home','calendar','events','programs','practice','podcast','papers','progress','glossary'];
 
   function showTab(id, skipHash) {
     if (!VALID_TABS.includes(id)) id = 'home';
@@ -2029,6 +2056,37 @@
   }
   window.addEventListener('popstate', openTabFromHash);
   openTabFromHash();
+
+  // ── PAPERS & ARTICLES ── add new entries to this list (newest first)
+  const PUBLICATIONS = [
+    {
+      type: 'Paper',
+      date: '2026',
+      title: 'Value Proposition Explained',
+      summary: 'The value proposition as a conversion: VP = f(P, S, A, ROI). A clear problem and an effective solution create an advantage, which drives conversion and ROI.',
+      url: 'Value%20Proposition%20Explained.pdf',
+      cta: 'Read PDF →'
+    }
+  ];
+  function filterPapers(type) {
+    document.querySelectorAll('#papers-filters button').forEach(b => b.classList.toggle('active', b.dataset.filter === type));
+    const list = document.getElementById('papers-list');
+    list.innerHTML = '';
+    PUBLICATIONS.filter(p => type === 'all' || p.type === type).forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const meta = document.createElement('div'); meta.className = 'card-meta'; meta.textContent = p.type + ' · ' + p.date;
+      const t = document.createElement('h3'); t.textContent = p.title;
+      const s = document.createElement('p'); s.textContent = p.summary;
+      const a = document.createElement('a'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener';
+      const b = document.createElement('button'); b.className = 'btn-sm'; b.textContent = p.cta || 'Read →';
+      a.appendChild(b);
+      card.append(meta, t, s, a);
+      list.appendChild(card);
+    });
+    if (!list.children.length) list.innerHTML = '<p style="text-align:center;grid-column:1/-1;color:var(--muted);">Nothing here yet. Check back soon.</p>';
+  }
+  filterPapers('all');
 
   function toggleNav() {
     document.getElementById('main-nav').classList.toggle('open');

@@ -62,7 +62,8 @@
     #tab-podcast .about-intro { margin-bottom: 24px; }
 
     /* Home: soft laurel branches curving up both edges (home page only) */
-    .home-laurel-wrap { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .home-laurel-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    #tab-home > *:not(.home-laurel-wrap) { position: relative; z-index: 1; }
     .home-laurel { position: absolute; top: 0; height: 100vh; width: auto; aspect-ratio: 1 / 3; opacity: 0.16; }
     .home-laurel.left { left: -4vh; }
     .home-laurel.right { right: -4vh; transform: scaleX(-1); }

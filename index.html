@@ -65,11 +65,12 @@
     .home-laurel-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
     .tab-panel:not(#tab-podcast) > * { position: relative; z-index: 1; }
     /* Podcast: umber laurel over the lemonade photo, plus a mustard copy that flows over the dark boxes */
-    body.on-podcast .home-laurel-wrap:not(.over) .home-laurel g { stroke: #2a1c08; }
-    body.on-podcast .home-laurel-wrap:not(.over) .home-laurel { opacity: 0.6; }
+    body.on-podcast .home-laurel-wrap:not(.over) .home-laurel g { stroke: #1a1105; stroke-width: 2.2; filter: none; }
+    body.on-podcast .home-laurel-wrap:not(.over) .home-laurel { opacity: 0.9; }
     .home-laurel-wrap.over { display: none; z-index: 3; mix-blend-mode: screen; }
     body.on-podcast .home-laurel-wrap.over { display: block; }
-    body.on-podcast .home-laurel-wrap.over .home-laurel { opacity: 0.3; }
+    body.on-podcast .home-laurel-wrap.over .home-laurel { opacity: 0.32; }
+    body.on-podcast .home-laurel-wrap.over .home-laurel g { stroke-width: 1.6; filter: none; }
     .home-laurel { position: absolute; top: 0; height: 100vh; width: auto; aspect-ratio: 2 / 5; opacity: 0.38; }
     .home-laurel.left { left: -4vh; }
     .home-laurel.right { right: -4vh; transform: scaleX(-1); }
@@ -1927,7 +1928,7 @@
 
   <!-- ═══════════════════════════════ PODCAST ═══════════════════════════ -->
   <section id="tab-podcast" class="tab-panel">
-    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.38);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);pointer-events:none;"></div>
     <div style="position:relative;z-index:1;">
     <div class="section-header" style="padding-top:0;text-align:center;">
       <div class="eyebrow">Listen & Learn</div>

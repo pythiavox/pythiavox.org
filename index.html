@@ -1059,6 +1059,12 @@
       gap: 6px;
       cursor: pointer;
     }
+    .practice-header { position:relative; }
+    .practice-header .eyebrow, .practice-header h2, .practice-header p { padding-right:100px; }
+    .header-qr { position:absolute; bottom:16px; right:0; display:flex; flex-direction:column; align-items:center; gap:3px; background:#fff; padding:5px 5px 3px; border-radius:8px; }
+    .header-qr span { font-family:var(--sans); font-size:0.5rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#444; }
+    .header-qr canvas, .header-qr img { display:block; }
+    @media (max-width: 600px) { .header-qr { display:none; } .practice-header .eyebrow, .practice-header h2, .practice-header p { padding-right:0; } }
     .float-book-bubble {
       background: var(--crimson);
       color: #000;
@@ -1515,19 +1521,14 @@
   <!-- ═══════════════════════════════ QUESTIONNAIRES ════════════════════ -->
   <!-- ═══════════════════════════════ PRACTICE ══════════════════════════ -->
   <section id="tab-practice" class="tab-panel">
-    <div class="section-header">
+    <div class="section-header practice-header">
+      <div class="header-qr" title="Scan to share the Practice page">
+        <div id="practice-qr"></div>
+        <span>Scan to share</span>
+      </div>
       <div class="eyebrow">Skill Building Exercises</div>
       <h2>Practice</h2>
       <p>Practical frameworks to sharpen your venture skills — from crafting your value proposition to delivering an authentic pitch.</p>
-    </div>
-
-    <!-- QR code — links directly to Practice tab -->
-    <div style="display:flex;justify-content:flex-end;margin-bottom:24px;">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:center;max-width:170px;">
-        <div style="font-family:var(--sans);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Scan to Share</div>
-        <div id="practice-qr" style="display:flex;justify-content:center;align-items:center;"></div>
-        <div style="font-family:var(--sans);font-size:0.68rem;color:var(--muted);margin-top:10px;line-height:1.5;">pythiavox.org<br/>#practice</div>
-      </div>
     </div>
 
     <div class="practice-pills">
@@ -2738,8 +2739,8 @@
   });
   new QRCode(document.getElementById('practice-qr'), {
     text: 'https://pythiavox.org/#practice',
-    width: 130,
-    height: 130,
+    width: 72,
+    height: 72,
     colorDark: '#000000',
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.H

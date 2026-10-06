@@ -1263,7 +1263,10 @@
         </div>
       </div>
 
-      <iframe id="booking-form" src="https://form.jotform.com/261796301232049" style="width:100%;min-height:700px;border:none;border-radius:10px;" scrolling="yes" allowtransparency="true"></iframe>
+      <!-- The wrapper crops the form's built-in white logo strip (top ~190px) -->
+      <div style="overflow:hidden;border-radius:10px;">
+        <iframe id="booking-form" src="https://form.jotform.com/261796301232049" style="display:block;width:100%;min-height:890px;margin-top:-190px;border:none;" scrolling="yes" allowtransparency="true"></iframe>
+      </div>
       <p style="margin-top:16px;font-family:var(--sans);font-size:0.82rem;color:var(--muted);text-align:center;">For evening appointments, email <a href="mailto:rhoda@pythiavox.org" style="color:var(--accent);">rhoda@pythiavox.org</a></p>
     </div>
   </section>
@@ -1519,8 +1522,8 @@
     </div>
 
     <!-- QR code — links directly to Practice tab -->
-    <div style="display:flex;justify-content:center;margin-bottom:28px;">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 24px;text-align:center;max-width:200px;">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:24px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:center;max-width:170px;">
         <div style="font-family:var(--sans);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Scan to Share</div>
         <div id="practice-qr" style="display:flex;justify-content:center;align-items:center;"></div>
         <div style="font-family:var(--sans);font-size:0.68rem;color:var(--muted);margin-top:10px;line-height:1.5;">pythiavox.org<br/>#practice</div>
